@@ -2,8 +2,6 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Contact from "./Contact";
-import Services from "./Services";
 
 export default function Hero() {
   return (
