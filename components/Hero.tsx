@@ -11,7 +11,7 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
         className="max-w-4xl"
       >
         <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-[1.15] tracking-tight">
@@ -22,7 +22,7 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 1 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
           className="text-xl md:text-2xl text-slate-400 mb-10 max-w-2xl mx-auto"
         >
           نحن لا نبرمج فقط، بل ندمج الذكاء الاصطناعي بتحليل البيانات لنخلق
@@ -32,7 +32,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 1, duration: 0.5 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
           className="flex gap-4 justify-center"
         >
           <Link

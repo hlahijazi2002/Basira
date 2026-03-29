@@ -5,10 +5,11 @@ import Navbar from "@/components/Navbar";
 
 const cairo = Cairo({
   subsets: ["arabic"],
-  weight: ["300", "400", "500", "700"],
+  weight: ["400", "700"],
   variable: "--font-cairo",
   display: "swap",
   adjustFontFallback: false,
+  preload: true,
 });
 export const metadata: Metadata = {
   title: "بصيرة | الرؤية الرقمية المدعومة بالبيانات",
