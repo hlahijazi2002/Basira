@@ -1,16 +1,9 @@
 import Hero from "@/components/Hero";
+import Services from "@/components/Services";
+import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import About from "@/components/About";
-import dynamic from "next/dynamic";
 
-const Services = dynamic(() => import("@/components/Services"), {
-  ssr: true,
-  loading: () => <div className="h-20" />,
-});
-
-const Contact = dynamic(() => import("@/components/Contact"), {
-  ssr: false,
-});
 export default function Home() {
   return (
     <main className="relative bg-slate-950">
