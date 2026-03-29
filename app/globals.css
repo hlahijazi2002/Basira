@@ -11,6 +11,7 @@ body {
   font-family: var(--font-cairo);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   @apply bg-slate-950 text-slate-100 antialiased;
 }
 h1,

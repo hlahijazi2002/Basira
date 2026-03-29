@@ -8,6 +8,7 @@ const cairo = Cairo({
   weight: ["300", "400", "500", "700"],
   variable: "--font-cairo",
   display: "swap",
+  adjustFontFallback: false,
 });
 export const metadata: Metadata = {
   title: "بصيرة | الرؤية الرقمية المدعومة بالبيانات",
