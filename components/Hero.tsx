@@ -36,13 +36,13 @@ export default function Hero() {
           className="flex gap-4 justify-center"
         >
           <Link
-            href="#Services"
+            href="#services"
             className="px-8 py-3 bg-cyan-500 text-slate-950 rounded-full font-bold hover:bg-cyan-400 transition shadow-lg shadow-cyan-900/50"
           >
             اكتشف خدماتنا
           </Link>
           <Link
-            href="#Contact"
+            href="#contact"
             className="px-8 py-3 bg-transparent border-2 border-slate-700 rounded-full hover:border-slate-500 transition"
           >
             تواصل معنا

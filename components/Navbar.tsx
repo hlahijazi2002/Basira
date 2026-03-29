@@ -38,6 +38,7 @@ export default function Navbar() {
         </div>
 
         <button
+          aria-label="فتح القائمة"
           className="md:hidden text-slate-100"
           onClick={() => setIsOpen(!isOpen)}
         >
