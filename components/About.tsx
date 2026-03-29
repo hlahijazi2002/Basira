@@ -1,9 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Target from "lucide-react/dist/esm/icons/target";
-import Lightbulb from "lucide-react/dist/esm/icons/lightbulb";
-import Rocket from "lucide-react/dist/esm/icons/rocket";
+import { Target, Lightbulb, Rocket } from "lucide-react";
 
 const features = [
   {

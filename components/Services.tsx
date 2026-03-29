@@ -1,9 +1,7 @@
 "use client";
+
 import { motion } from "framer-motion";
-import BarChart3 from "lucide-react/dist/esm/icons/bar-chart-3";
-import BrainCircuit from "lucide-react/dist/esm/icons/brain-circuit";
-import CodeXml from "lucide-react/dist/esm/icons/code-xml";
-import ShieldCheck from "lucide-react/dist/esm/icons/shield-check";
+import { BarChart3, BrainCircuit, CodeXml, ShieldCheck } from "lucide-react";
 
 const services = [
   {
