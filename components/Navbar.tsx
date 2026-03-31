@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Globe } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 
 export default function Navbar() {
@@ -55,9 +55,6 @@ export default function Navbar() {
           ))}
         </div>
         <div className="hidden md:flex items-center gap-4">
-          <button className="text-zinc-400 hover:text-white transition-colors">
-            <Globe size={20} />
-          </button>
           <Link
             href="#contact"
             className="px-6 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-sm font-bold rounded-xl transition-all shadow-[0_0_15px_rgba(37,99,235,0.3)] active:scale-95"
@@ -79,7 +76,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-24 left-6 right-6 p-8 bg-zinc-900 border border-white/10 rounded-3xl backdrop-blur-2xl z-[101] shadow-2xl md:hidden"
+            className="absolute top-24 left-6 right-6 p-8 bg-zinc-900 border border-white/10 rounded-3xl backdrop-blur-2xl z-101 shadow-2xl md:hidden"
           >
             <div className="flex flex-col gap-6 text-center">
               {navLinks.map((link) => (

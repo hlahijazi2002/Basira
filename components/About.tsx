@@ -1,32 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Target, Cpu, LineChart, CheckCircle2 } from "lucide-react";
-
-const features = [
-  {
-    icon: Target,
-    title: "رؤيتنا",
-    desc: "أن نكون الشريك التقني الأول في تحويل البيانات المعقدة إلى قرارات ذكية.",
-    color: "text-blue-400",
-    bg: "bg-blue-400/5",
-  },
-  {
-    icon: Cpu,
-    title: "مهمتنا",
-    desc: "تمكين المؤسسات من خلال حلول ذكاء اصطناعي مبتكرة تجمع بين القوة والبساطة.",
-    color: "text-cyan-400",
-    bg: "bg-cyan-400/5",
-  },
-  {
-    icon: LineChart,
-    title: "هدفنا",
-    desc: "دفع عجلة التحول الرقمي وبناء مستقبل يعتمد على دقة الأرقام والنتائج.",
-    color: "text-blue-500",
-    bg: "bg-blue-500/5",
-  },
-];
-
+import { features } from "@/data";
+import { CheckCircle2 } from "lucide-react";
 export default function About() {
   return (
     <section id="about" className="py-24 bg-zinc-950 relative overflow-hidden">

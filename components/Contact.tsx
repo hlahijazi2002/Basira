@@ -64,6 +64,7 @@ export default function Contact() {
                   />
                   <input
                     type="text"
+                    required
                     placeholder="الاسم الكريم"
                     className="w-full bg-zinc-950/50 border border-white/5 rounded-xl py-4 pr-12 pl-4 text-white text-sm outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 transition-all placeholder:text-zinc-700 text-right"
                   />
@@ -88,12 +89,14 @@ export default function Contact() {
                 />
                 <input
                   type="email"
+                  required
                   placeholder="البريد الإلكتروني"
                   className="w-full bg-zinc-950/50 border border-white/5 rounded-xl py-4 pr-12 pl-4 text-white text-sm outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 transition-all placeholder:text-zinc-700 text-right"
                 />
               </div>
               <div className="relative group">
                 <textarea
+                  required
                   rows={4}
                   placeholder="كيف يمكننا مساعدتك؟"
                   className="w-full bg-zinc-950/50 border border-white/5 rounded-xl py-4 pr-4 pl-4 text-white text-sm outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 transition-all placeholder:text-zinc-700 resize-none text-right"

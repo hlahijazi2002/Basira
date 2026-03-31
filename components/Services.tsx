@@ -1,22 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import {
-  BarChart3,
-  BrainCircuit,
-  CodeXml,
-  ShieldCheck,
-  Smartphone,
-  LineChart,
-} from "lucide-react";
-
-const services = [
-  { title: "تحليل البيانات", icon: BarChart3, color: "from-blue-500/20" },
-  { title: "الذكاء الاصطناعي", icon: BrainCircuit, color: "from-cyan-500/20" },
-  { title: "المنصات الرقمية", icon: CodeXml, color: "from-blue-400/20" },
-  { title: "أمن البيانات", icon: ShieldCheck, color: "from-blue-600/20" },
-  { title: "تطبيقات الموبايل", icon: Smartphone, color: "from-cyan-600/20" },
-  { title: "التسويق الذكي", icon: LineChart, color: "from-blue-700/20" },
-];
+import { services } from "../data";
 
 export default function Services() {
   const duplicated = [...services, ...services];
