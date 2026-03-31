@@ -12,9 +12,9 @@ const cairo = Cairo({
   preload: true,
 });
 export const metadata: Metadata = {
-  title: "بصيرة | الرؤية الرقمية المدعومة بالبيانات",
+  title: "BasiraLens",
   description:
-    "وكالة متخصصة في تحليل البيانات والذكاء الاصطناعي وتطوير الويب الذكي.",
+    "شركة متخصصة في تحليل البيانات والذكاء الاصطناعي وتطوير الويب الذكي.",
 };
 
 export default function RootLayout({

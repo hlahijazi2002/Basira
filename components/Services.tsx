@@ -1,86 +1,66 @@
 "use client";
-
 import { motion } from "framer-motion";
-import { BarChart3, BrainCircuit, CodeXml, ShieldCheck } from "lucide-react";
+import {
+  BarChart3,
+  BrainCircuit,
+  CodeXml,
+  ShieldCheck,
+  Smartphone,
+  LineChart,
+} from "lucide-react";
 
 const services = [
-  {
-    title: "تحليل البيانات واستشراف المستقبل",
-    description:
-      "نحول الأرقام الصماء إلى رؤى استراتيجية تدعم اتخاذ القرار وتوقع الاتجاهات المستقبلية.",
-    icon: BarChart3,
-  },
-  {
-    title: "حلول الذكاء الاصطناعي",
-    description:
-      "تطوير نماذج ذكية مخصصة لرفع كفاءة الأعمال وأتمتة العمليات المعقدة.",
-    icon: BrainCircuit,
-  },
-  {
-    title: "تطوير المنصات الرقمية",
-    description:
-      "بناء مواقع وتطبيقات ويب سريعة، متجاوبة، ومدعومة بأحدث التقنيات الحديثة.",
-    icon: CodeXml,
-  },
-  {
-    title: "أمن وحوكمة البيانات",
-    description:
-      "ضمان تدفق البيانات بشكل آمن وفق أعلى معايير الحماية والخصوصية الدولية.",
-    icon: ShieldCheck,
-  },
+  { title: "تحليل البيانات", icon: BarChart3, color: "from-blue-500/20" },
+  { title: "الذكاء الاصطناعي", icon: BrainCircuit, color: "from-cyan-500/20" },
+  { title: "المنصات الرقمية", icon: CodeXml, color: "from-blue-400/20" },
+  { title: "أمن البيانات", icon: ShieldCheck, color: "from-blue-600/20" },
+  { title: "تطبيقات الموبايل", icon: Smartphone, color: "from-cyan-600/20" },
+  { title: "التسويق الذكي", icon: LineChart, color: "from-blue-700/20" },
 ];
 
 export default function Services() {
+  const duplicated = [...services, ...services];
   return (
     <section
       id="services"
-      className="py-24 bg-slate-950 relative overflow-hidden"
+      className="py-24 bg-zinc-950 overflow-hidden border-t border-white/5"
     >
-      {/* لمسة فنية: دائرة ضوئية في الخلفية */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-900/20 blur-[120px] rounded-full" />
-
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-white mb-4"
-          >
-            خدمات <span className="text-cyan-400">بصيرة</span> المتكاملة
-          </motion.h2>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            نقدم حلولاً تقنية شاملة تجمع بين دقة التحليل وإبداع التنفيذ لتمكين
-            أعمالكم رقمياً.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -10 }}
-              className="p-8 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/50 transition-all group backdrop-blur-sm"
+      <div className="text-center mb-16 px-6">
+        <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
+          خدماتنا <span className="text-blue-500">الذكية</span>
+        </h2>
+      </div>
+      <div className="relative flex overflow-hidden">
+        <motion.div
+          animate={{ x: ["0%", "50%"] }}
+          transition={{ ease: "linear", duration: 25, repeat: Infinity }}
+          className="flex gap-6 pr-6"
+        >
+          {duplicated.map((s, i) => (
+            <div
+              key={i}
+              className="w-[320px] shrink-0 p-8 rounded-3xl bg-zinc-900/50 border border-white/5 backdrop-blur-xl group "
             >
-              <div className="w-14 h-14 rounded-lg bg-cyan-500/10 flex items-center justify-center mb-6 group-hover:bg-cyan-500 transition-colors">
-                <service.icon
-                  className="text-cyan-400 group-hover:text-slate-950 transition-colors"
-                  size={32}
+              <div
+                className={`absolute inset-0 bg-linear-to-br ${s.color} to-transparent opacity-0 group-hover:opacity-100 transition-opacity`}
+              />
+              <div className="relative w-14 h-14 bg-zinc-950 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform hover:border-blue-500/50 transition-all">
+                <s.icon
+                  className="text-blue-400 group-hover:text-cyan-400"
+                  size={28}
                 />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
-                {service.title}
+              <h3 className="relative z-10 text-xl font-bold text-white mb-2 text-right">
+                {s.title}
               </h3>
-              <p className="text-slate-400 leading-relaxed text-sm">
-                {service.description}
+              <p className="relative z-10 text-zinc-500 text-sm text-right leading-relaxed">
+                نحوِّل التحديات التقنية إلى فرص نمو ذكية باستخدام أحدث الأدوات.
               </p>
-            </motion.div>
+            </div>
           ))}
-        </div>
+        </motion.div>
+        <div className="absolute inset-y-0 left-0 w-32 bg-linear-to-r from-zinc-950 to-transparent z-20 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-32 bg-linear-to-l from-zinc-950 to-transparent z-20 pointer-events-none" />
       </div>
     </section>
   );

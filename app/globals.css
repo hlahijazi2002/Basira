@@ -3,6 +3,7 @@
 :root {
   --font-cairo: "Cairo", sans-serif;
 }
+
 html {
   scroll-behavior: smooth;
 }
@@ -14,23 +15,36 @@ body {
   text-rendering: optimizeLegibility;
   @apply bg-slate-950 text-slate-100 antialiased;
 }
+
 h1,
 h2,
 h3 {
   font-weight: 700;
   letter-spacing: -0.02em;
 }
+
 p {
-  font-weight: 300; /* الوزن الخفيف يعطي طابعاً عصرياً */
+  font-weight: 300;
   line-height: 1.8;
 }
 
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   @apply bg-slate-950;
 }
+
 ::-webkit-scrollbar-thumb {
-  @apply bg-slate-800 rounded-full hover:bg-cyan-900 transition;
+  @apply bg-blue-600 rounded-full transition-colors duration-300;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-blue-400;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2563eb #020617;
 }
