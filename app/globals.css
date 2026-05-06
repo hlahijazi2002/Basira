@@ -17,7 +17,7 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  @apply bg-slate-950;
+  @apply bg-slate-100;
 }
 ::-webkit-scrollbar-thumb {
   @apply bg-blue-600 rounded-full;

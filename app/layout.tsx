@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ar" dir="rtl">
+    <html lang="en" dir="ltr">
       <body
         className={`${cairo.variable} font-sans bg-slate-950 text-slate-100`}
       >

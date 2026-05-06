@@ -1,59 +1,59 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Sparkles, ArrowLeft } from "lucide-react";
+import { Sparkles, ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden bg-zinc-950 pt-15 md:pt-18">
+    <section className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden bg-slate-50 pt-20">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-125 h-75 bg-blue-600/10 blur-[120px] rounded-full" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-150 h-75 bg-blue-400/5 blur-[120px] rounded-full" />
       </div>
+
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center text-center"
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="relative z-10 w-full max-w-5xl mx-auto flex flex-col items-center text-center"
       >
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/20 bg-blue-500/5 text-blue-400 text-[10px] md:text-xs font-medium mb-6 uppercase tracking-[0.2em]">
-          <Sparkles size={12} className="animate-pulse" /> مستقبل الذكاء
-          الاصطناعي
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-200 bg-blue-50/50 text-blue-600 text-[11px] font-bold mb-8 uppercase tracking-[0.25em]">
+          <Sparkles size={14} className="text-blue-500" />
+          The Future of Intelligence
         </div>
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 leading-[1.1] text-white tracking-tight">
-          رؤية رقمية <br />
-          <span className="bg-linear-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent">
-            تتجاوز الحدود
+
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-black mb-8 leading-[1.05] text-slate-900 tracking-tight">
+          Digital Visions <br />
+          <span className="bg-clip-text text-transparent bg-linear-to-r from-blue-600 via-indigo-500 to-blue-400">
+            Beyond Boundaries
           </span>
         </h1>
-        <p className="text-zinc-500 text-base md:text-lg mb-10 max-w-2xl font-light leading-relaxed">
-          في بصيرة، نمزج سحر البرمجة بقوة البيانات لنخلق أنظمة ذكية لا تخدمك
-          فحسب، بل تفهمك وتنمو معك.
+
+        <p className="text-slate-500 text-lg md:text-xl mb-12 max-w-2xl font-medium leading-relaxed">
+          At <span className="text-slate-900 font-bold">Basira</span>, we weave
+          code into magic and data into wisdom. Building intelligent ecosystems
+          that don&rsquo;t just solve problems, but evolve with your ambitions.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 items-center">
+
+        {/* Action Buttons */}
+        <div className="flex flex-col sm:flex-row gap-5 items-center">
           <Link
             href="#services"
-            className="group px-8 py-3.5 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-500 transition-all flex items-center gap-2 shadow-lg shadow-blue-600/20"
+            className="group px-10 py-4 bg-blue-600 text-white rounded-2xl font-bold hover:bg-blue-700 transition-all flex items-center gap-2 shadow-xl shadow-blue-600/15 active:scale-95"
           >
-            اكتشف خدماتنا
-            <ArrowLeft
-              size={18}
-              className="group-hover:-translate-x-1 transition-transform"
+            Explore Our Craft
+            <ArrowRight
+              size={20}
+              className="group-hover:translate-x-1 transition-transform"
             />
           </Link>
           <Link
             href="#contact"
-            className="px-8 py-3.5 border border-zinc-800 text-zinc-400 rounded-xl font-bold hover:bg-white/5 hover:text-white transition-all"
+            className="px-10 py-4 border border-slate-200 text-slate-600 rounded-2xl font-bold hover:bg-white hover:border-slate-300 hover:text-slate-900 transition-all shadow-sm active:scale-95"
           >
-            تواصل معنا
+            Get in Touch
           </Link>
         </div>
       </motion.div>
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30">
-        <div className="w-px h-12 bg-linear-to-b from-blue-500 to-transparent" />
-        <span className="text-[10px] uppercase tracking-widest text-zinc-500">
-          Scroll
-        </span>
-      </div>
     </section>
   );
 }
