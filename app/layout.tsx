@@ -4,17 +4,17 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 
 const cairo = Cairo({
-  subsets: ["arabic"],
+  subsets: ["latin", "arabic"],
   weight: ["400", "700"],
   variable: "--font-cairo",
   display: "swap",
-  adjustFontFallback: false,
-  preload: true,
+  preload: false,
 });
+
 export const metadata: Metadata = {
   title: "BasiraLens",
   description:
-    "شركة متخصصة في تحليل البيانات والذكاء الاصطناعي وتطوير الويب الذكي.",
+    "A company specialized in data analysis, AI, and smart web development.",
 };
 
 export default function RootLayout({
@@ -24,11 +24,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" dir="ltr">
-      <body
-        className={`${cairo.variable} font-sans bg-slate-950 text-slate-100`}
-      >
+      <body className={`${cairo.className} bg-slate-950 text-slate-100`}>
         <Navbar />
-        {children}
+        <main>{children}</main>
       </body>
     </html>
   );
