@@ -1,4 +1,4 @@
-import { Brain, Code2, Layout, LineChart } from "lucide-react";
+import { Brain, Code2, Layout, LineChart, Search, Eye, BarChart, Network, Bot, MessageCircle } from "lucide-react";
 
 export const features = [
   {
@@ -17,24 +17,46 @@ export const features = [
 
 export const services = [
   {
-    title: "AI Development",
-    desc: "Custom machine learning models tailored to your business data.",
+    title: "Autonomous AI & Intelligent Agents",
+    desc: "Designing self-operating AI agents capable of executing complex workflows and autonomous reasoning.",
+    icon: Bot,
+    details: ["Agentic Workflows", "Multi-Agent Systems", "Autonomous Reasoning", "API & Tool Integration"],
+    tools: ["LangChain", "CrewAI", "Grok", "Python"]
+  },
+  {
+    title: "Predictive Analytics & Machine Learning",
+    desc: "Forecasting sales, customer behavior, and patterns using high-precision neural networks and ML models.",
     icon: Brain,
+    details: ["Demand Forecasting", "Churn Prediction", "Fraud Detection", "Neural Network Design"],
+    tools: ["Scikit-learn", "Pandas", "XGBoost", "Python"]
   },
   {
-    title: "Full-Stack Web",
-    desc: "Scalable web applications built with Next.js and TypeScript.",
+    title: "Conversational AI & NLP",
+    desc: "Building semantic search engines and intelligent chatbots for human-like interaction and text analysis.",
+    icon: MessageCircle,
+    details: ["Custom Chatbots", "Semantic Search", "Sentiment Analysis", "Entity Extraction"],
+    tools: ["OpenAI", "Grok", "NLTK", "FastAPI"]
+  },
+  {
+    title: "Computer Vision & Visual Intelligence",
+    desc: "Developing real-time monitoring and object detection systems through advanced visual AI models.",
+    icon: Eye,
+    details: ["Object Recognition", "Facial Analysis", "OCR Systems", "Real-time Video Analytics"],
+    tools: ["YOLOv8", "OpenCV", "PyTorch", "Python"]
+  },
+  {
+    title: "Strategic Analytics & Business Intelligence",
+    desc: "Transforming complex data into actionable intelligence through SPSS analysis, R programming, Power BI dashboards, and advanced statistical modeling.",
+    icon: BarChart,
+    details: ["Survey Analytics (SPSS & R)", "Statistical Computing (R)", "Interactive Dashboards", "Strategic Data Storytelling"],
+    tools: ["SPSS", "R Language", "Power BI", "Excel"]
+  },
+  {
+    title: "Full-Stack AI-Native Development",
+    desc: "Architecting scalable, high-performance web ecosystems seamlessly integrated with intelligent AI backends.",
     icon: Code2,
-  },
-  {
-    title: "Data Analytics",
-    desc: "Transforming raw data into strategic business intelligence.",
-    icon: LineChart,
-  },
-  {
-    title: "UI/UX Engineering",
-    desc: "Intuitive digital experiences centered around user behavior.",
-    icon: Layout,
+    details: ["Custom Web Apps", "AI Integration", "Cloud-Native Systems", "Performance Optimization"],
+    tools: ["Next.js", "FastAPI", "React", "TypeScript"]
   },
 ];
 
@@ -42,13 +64,20 @@ export const team = [
   {
     id: "1",
     name: "Hla Hijazi",
+    nameAr: "حلا حجازي",
     role: "Full-Stack Developer & Software Engineer",
+    roleAr: "مطورة تطبيقات ويب متكاملة ومهندسة برمجيات",
     image: "/HlaHijazi.jpeg",
     bio: `A Software Engineer and Full-Stack Developer driven by the challenge of transforming complex ideas into seamless digital solutions. 
 
 Specializing in modern web technologies like Next.js and TypeScript, I focus on building scalable architectures and intuitive user experiences. 
 
 I am committed to clean code, performance optimization, and staying at the forefront of technical innovation. With a strategic approach to problem-solving, I strive to deliver high-quality software that balances technical excellence with functional design.`,
+    bioAr: `مهندسة برمجيات ومطورة تطبيقات ويب متكاملة، يحفزني التحدي المتمثل في تحويل الأفكار المعقدة إلى حلول رقمية سلسة.
+
+متخصصة في تقنيات الويب الحديثة مثل Next.js و TypeScript، أركز على بناء بنى تحتية قابلة للتوسع وتجارب مستخدم بديهية.
+
+أنا ملتزمة بالكود النظيف، وتحسين الأداء، والبقاء في طليعة الابتكار التقني. من خلال نهج استراتيجي لحل المشكلات، أسعى لتقديم برمجيات عالية الجودة توازن بين التميز التقني والتصميم الوظيفي.`,
     skills: [
       "Next.js",
       "React",
@@ -68,7 +97,9 @@ I am committed to clean code, performance optimization, and staying at the foref
   {
     id: "2",
     name: "Fares Alnamla",
+    nameAr: "فارس النملة",
     role: "Data Scientist & AI Engineer",
+    roleAr: "عالم بيانات ومهندس ذكاء اصطناعي",
     image: "/FaresAlnamla.jpg",
 
     bio: `A Data Scientist & AI Engineer who builds machine learning and NLP systems that turn complex data into real, measurable outcomes.
@@ -89,6 +120,24 @@ Tools I work with: Python, FastAPI, PostgreSQL, Docker, Git, Scikit-learn
 I take time to understand the problem before writing a single line of code — and I deliver work I can stand behind.
 
 If you need someone who understands both the data and the decision-making behind it, let's talk.`,
+    bioAr: `عالم بيانات ومهندس ذكاء اصطناعي يبني أنظمة تعلم آلي ومعالجة لغات طبيعية (NLP) تحول البيانات المعقدة إلى نتائج ملموسة وقابلة للقياس.
+
+مهاراتي الأساسية:
+✅ التعلم الآلي والنمذجة التنبؤية — التصنيف، هندسة الميزات، من البيانات الخام إلى نماذج جاهزة للإنتاج.
+✅ معالجة اللغات الطبيعية — المعالجة المسبقة للنصوص، TF-IDF، تضمين الكلمات، تصنيف النصوص.
+✅ البحث الدلالي والاسترجاع — الفهرسة الشعاعية، مسارات البحث المعتمدة على السياق.
+✅ تطوير برمجيات بلغة بايثون — كود نظيف، منظم، وجاهز للإنتاج.
+
+مشاريع قمت ببنائها:
+• RecipaAI — مساعد ذكاء اصطناعي يعتمد على RAG مع مسارات استرجاع وبحث دلالي على البيانات غير المنظمة.
+• كاشف الرسائل المزعجة (Spam) — باستخدام Naive Bayes و Logistic Regression مع استخراج ميزات TF-IDF.
+• كاشف الأخبار الزائفة في فلسطين — خط معالجة NLP كامل مع Decision Tree و Logistic Regression.
+
+الأدوات التي أعمل بها: Python, FastAPI, PostgreSQL, Docker, Git, Scikit-learn.
+
+آخذ وقتي لفهم المشكلة قبل كتابة سطر واحد من الكود — وأقدم عملاً أفتخر به.
+
+إذا كنت بحاجة إلى شخص يفهم كلاً من البيانات وصناعة القرار وراءها، فلنتحدث.`,
     skills: [
       "Machine Learning",
       "NLP (Natural Language Processing)",
@@ -107,9 +156,12 @@ If you need someone who understands both the data and the decision-making behind
   {
     id: "3",
     name: "Mahmoud Almodalal",
+    nameAr: "محمود المدلل",
     role: "Backend Developer | Computer Vision Engineer",
+    roleAr: "مطور خلفية | مهندس رؤية حاسوبية",
     image: "/MahmoudModalal.jpg",
     bio: `Computer Engineer specializing in Python backend development and AI-powered computer vision, with a GPA of 91%. Builds production-grade SaaS platforms using Django, DRF, and Clean Architecture, and develops real-world CV systems with YOLOv8, DeepSort, and InsightFace. Passionate about scalable systems and intelligent solutions — from database design to model optimization.`,
+    bioAr: `مهندس حاسوب متخصص في تطوير الخلفية بلغة بايثون والرؤية الحاسوبية المدعومة بالذكاء الاصطناعي، بمعدل تراكمي 91٪. أقوم ببناء منصات SaaS احترافية باستخدام Django و DRF ومعمارية نظيفة (Clean Architecture)، وأطور أنظمة رؤية حاسوبية واقعية باستخدام YOLOv8 و DeepSort و InsightFace. شغوف بالأنظمة القابلة للتوسع والحلول الذكية — من تصميم قواعد البيانات إلى تحسين النماذج.`,
     skills: [
       "Django & DRF",
       "Computer Vision",
@@ -129,11 +181,16 @@ If you need someone who understands both the data and the decision-making behind
   {
     id: "4",
     name: "Ahmed Al-Yazouri",
+    nameAr: "أحمد اليازوري",
     role: "Data Science and Artificial Intelligence",
+    roleAr: "علوم البيانات والذكاء الاصطناعي",
     image: "/AhmedYazouri.jpg",
     bio: `Ahmed Al-Yazouri is a Data Science and Artificial Intelligence expert focused on delivering intelligent, data-driven solutions that transform complex data into actionable insights.
 
 He specializes in data analysis, database architecture, and scalable system design, with hands-on experience in SQL and PostgreSQL. His expertise extends to building advanced AI systems using Machine Learning, Retrieval-Augmented Generation (RAG), and Multi-Agent architectures, enabling high-performance and intelligent decision-support systems.`,
+    bioAr: `أحمد اليازوري خبير في علوم البيانات والذكاء الاصطناعي، يركز على تقديم حلول ذكية تعتمد على البيانات وتحول البيانات المعقدة إلى رؤى قابلة للتنفيذ.
+
+يتخصص في تحليل البيانات، ومعمارية قواعد البيانات، وتصميم الأنظمة القابلة للتوسع، مع خبرة عملية في SQL و PostgreSQL. تمتد خبرته إلى بناء أنظمة ذكاء اصطناعي متقدمة باستخدام التعلم الآلي، والاسترجاع المعزز بالتوليد (RAG)، ومعماريات الوكلاء المتعددين (Multi-Agent)، مما يمكن من بناء أنظمة دعم قرار ذكية وعالية الأداء.`,
     skills: [
       "Data Science",
       "Artificial Intelligence",

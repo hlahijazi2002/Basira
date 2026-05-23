@@ -1,72 +1,145 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { services } from "../data";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Cpu, Layers } from "lucide-react";
+import { useLanguage, translations } from "@/context/LanguageContext";
+import { useState } from "react";
 
 export default function Services() {
-  const duplicatedServices = [...services, ...services];
+  const { t, language } = useLanguage();
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  const globalTechStack = [
+    "Python", "R", "SQL", "Pandas", "Scikit-learn", "Power BI", "Excel", "Tableau", "FastAPI", "Next.js"
+  ];
 
   return (
-    <section
-      id="services"
-      dir="ltr"
-      className="py-24 bg-white overflow-hidden border-t border-slate-100"
-    >
-      <div className="max-w-7xl mx-auto px-6 mb-16 text-left">
-        <span className="text-blue-600 font-bold text-[11px] uppercase tracking-[0.4em] block mb-4">
-          Expertise
-        </span>
-        <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter">
-          Our <span className="text-slate-400">Capabilities</span>
-        </h2>
-      </div>
+    <section id="services" className="py-24 bg-white border-t border-slate-100 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Header */}
+        <div className={`mb-24 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+          <span className="text-blue-600 font-bold text-[11px] uppercase tracking-[0.4em] block mb-4">
+            {t("services_badge")}
+          </span>
+          <h2 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter mb-6">
+            {t("services_title_part1")} <span className="text-slate-300">{t("services_title_part2")}</span>
+          </h2>
+          <div className={`w-20 h-1.5 bg-blue-600 rounded-full ${language === 'ar' ? 'mr-0 ml-auto' : ''}`} />
+        </div>
 
-      <div className="relative flex overflow-hidden py-10">
-        <motion.div
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{
-            ease: "linear",
-            duration: 30,
-            repeat: Infinity,
-          }}
-          className="flex gap-6 whitespace-nowrap"
-        >
-          {duplicatedServices.map((s, i) => {
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map((s, i) => {
             const IconComponent = s.icon;
+            const details = (translations[language] as any)[`service_${i + 1}_details`] || [];
+            const tools = s.tools || [];
+
             return (
-              <div
+              <motion.div
                 key={i}
-                className="w-87.5 shrink-0 p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-blue-500/30 hover:bg-white hover:shadow-xl transition-all duration-500 group"
+                onMouseEnter={() => setHoveredIndex(i)}
+                onMouseLeave={() => setHoveredIndex(null)}
+                className={`relative group p-8 rounded-[2.5rem] border transition-all duration-700 cursor-default min-h-[480px] flex flex-col justify-between overflow-hidden ${
+                  hoveredIndex === i 
+                    ? "bg-white border-blue-200 shadow-2xl shadow-blue-500/10 scale-[1.02] z-20" 
+                    : "bg-slate-50 border-slate-100"
+                }`}
               >
-                <div className="flex justify-between items-start mb-8">
-                  <div className="w-12 h-12 bg-white border border-slate-200 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:border-blue-500 transition-all duration-500">
-                    {IconComponent && (
-                      <IconComponent
-                        className="text-slate-400 group-hover:text-blue-600"
-                        size={24}
-                      />
-                    )}
+                {/* Background Accent Animation */}
+                <div className={`absolute -right-20 -top-20 w-64 h-64 bg-blue-50 rounded-full blur-3xl transition-opacity duration-700 ${hoveredIndex === i ? "opacity-100" : "opacity-0"}`} />
+
+                <div className="relative z-10">
+                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-8 transition-all duration-500 ${
+                    hoveredIndex === i ? "bg-blue-600 text-white shadow-xl shadow-blue-600/20" : "bg-white border border-slate-200 text-slate-400 shadow-sm"
+                  }`}>
+                    {IconComponent && <IconComponent size={28} />}
                   </div>
-                  <ArrowUpRight
-                    className="text-slate-300 group-hover:text-blue-600 transition-colors"
-                    size={20}
-                  />
+
+                  <h3 className="text-2xl font-black mb-6 uppercase tracking-tight leading-tight text-slate-900">
+                    {t(`service_${i + 1}_title`)}
+                  </h3>
+
+                  <div className="space-y-8">
+                    {/* Description */}
+                    <p className={`text-sm leading-relaxed font-medium transition-colors duration-500 ${hoveredIndex === i ? "text-slate-600" : "text-slate-400"}`}>
+                      {t(`service_${i + 1}_desc`)}
+                    </p>
+
+                    {/* Expertise List (Reveal on Hover) */}
+                    <div className={`space-y-4 transition-all duration-700 ${hoveredIndex === i ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"}`}>
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-2 text-[10px] font-black text-blue-600 uppercase tracking-widest mb-2">
+                          <Layers size={12} /> {t("expertise_label")}
+                        </div>
+                        <div className="grid grid-cols-1 gap-2">
+                          {details.map((detail: string, idx: number) => (
+                            <div key={idx} className="flex items-center gap-2 text-xs font-bold text-slate-700 uppercase tracking-tight">
+                              <div className="w-1.5 h-1.5 bg-blue-500 rounded-full shrink-0" />
+                              {detail}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Tech Stack for this service */}
+                      <div className="pt-4">
+                        <div className="flex items-center gap-2 text-[10px] font-black text-cyan-600 uppercase tracking-widest mb-3">
+                          <Cpu size={12} /> {t("tools_label")}
+                        </div>
+                        <div className="flex flex-wrap gap-1.5">
+                          {tools.map((tool, idx) => (
+                            <span key={idx} className="px-2.5 py-1 bg-slate-100 text-slate-500 text-[9px] font-black rounded-lg border border-slate-200/50 uppercase tracking-tighter hover:bg-white hover:border-blue-300 hover:text-blue-600 transition-all">
+                              {tool}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
-                <h3 className="text-xl font-black text-slate-900 mb-3 uppercase tracking-tight">
-                  {s.title}
-                </h3>
-                <p className="text-slate-500 text-sm leading-relaxed whitespace-normal font-medium">
-                  {s.desc}
-                </p>
-              </div>
+                <div className="relative z-10 w-full pt-8 mt-8 border-t border-slate-100 flex justify-between items-center">
+                  <span className={`text-[10px] font-black uppercase tracking-[0.2em] transition-colors duration-500 ${
+                    hoveredIndex === i ? "text-blue-600" : "text-slate-300"
+                  }`}>
+                    Pillar 0{i + 1}
+                  </span>
+                  <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500 ${
+                    hoveredIndex === i ? "bg-blue-600 text-white shadow-lg" : "bg-white border border-slate-200 text-slate-300"
+                  }`}>
+                    <ArrowUpRight size={20} />
+                  </div>
+                </div>
+              </motion.div>
             );
           })}
-        </motion.div>
+        </div>
 
-        <div className="absolute inset-y-0 left-0 w-32 bg-linear-to-r from-white to-transparent z-20 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-32 bg-linear-to-l from-white to-transparent z-20 pointer-events-none" />
+        {/* Global Tech Stack Section */}
+        <div className="mt-32 pt-20 border-t border-slate-100">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+            <div className={`lg:w-1/3 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+              <h4 className="text-2xl font-black text-slate-900 mb-4 uppercase tracking-tighter">
+                {t("tech_stack_title")}
+              </h4>
+              <p className="text-slate-400 text-sm font-medium leading-relaxed">
+                {t("tech_stack_desc")}
+              </p>
+            </div>
+            
+            <div className="lg:w-2/3 flex flex-wrap justify-center lg:justify-end gap-3">
+              {globalTechStack.map((tool, i) => (
+                <span
+                  key={i}
+                  className="px-6 py-3 bg-slate-50 border border-slate-100 rounded-full text-slate-600 text-[11px] font-black uppercase tracking-widest hover:border-blue-500 hover:text-blue-600 hover:bg-white transition-all cursor-default shadow-sm"
+                >
+                  {tool}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

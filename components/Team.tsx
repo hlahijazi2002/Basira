@@ -4,23 +4,25 @@ import Link from "next/link";
 import Image from "next/image";
 import { Eye } from "lucide-react";
 import { team } from "../data";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Team() {
+  const { t, language } = useLanguage();
+
   return (
-    <section id="team" dir="ltr" className="py-24 bg-white px-16">
+    <section id="team" className="py-24 bg-white px-16">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div className={`mb-16 flex flex-col md:flex-row md:items-end justify-between gap-4 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
           <div>
             <span className="text-blue-600 font-bold text-[10px] uppercase tracking-[0.4em] block mb-2">
-              Our Talent
+              {t("team_badge")}
             </span>
             <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter">
-              Meet the <span className="text-blue-700">Experts</span>
+              {t("team_title_part1")} <span className="text-blue-700">{t("team_title_part2")}</span>
             </h2>
           </div>
           <p className="text-slate-400 text-sm max-w-xs font-medium italic">
-            A diverse team of engineers and designers building the future of
-            digital lens.
+            {t("team_desc")}
           </p>
         </div>
 
@@ -37,7 +39,7 @@ export default function Team() {
               <div className="relative aspect-square overflow-hidden rounded-3xl bg-slate-100 mb-6 border border-slate-100 group-hover:border-blue-500/20 transition-all duration-500">
                 <Image
                   src={member.image}
-                  alt={member.name}
+                  alt={language === 'ar' ? (member as any).nameAr : member.name}
                   fill
                   className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
@@ -47,10 +49,10 @@ export default function Team() {
               <div className="flex items-center justify-between gap-2 px-2">
                 <div className="overflow-hidden">
                   <h3 className="text-lg font-black text-slate-900 uppercase truncate tracking-tight">
-                    {member.name}
+                    {language === 'ar' ? (member as any).nameAr : member.name}
                   </h3>
                   <p className="text-[10px] text-blue-600 font-bold tracking-widest uppercase truncate">
-                    {member.role}
+                    {language === 'ar' ? (member as any).roleAr : member.role}
                   </p>
                 </div>
 

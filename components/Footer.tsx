@@ -1,11 +1,13 @@
 "use client";
 
+import { useLanguage } from "@/context/LanguageContext";
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const { t, language } = useLanguage();
 
   return (
     <footer
-      dir="ltr"
       className="bg-white py-6 px-16 border-t border-slate-100 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
@@ -37,7 +39,7 @@ export default function Footer() {
         </div>
 
         <div className="text-slate-400 text-[10px] font-black uppercase tracking-[3px]">
-          &copy; {currentYear} BASIRA GLOBAL
+          &copy; {currentYear} {language === 'ar' ? t("footer_global") : 'BASIRA GLOBAL'}
         </div>
       </div>
 

@@ -7,12 +7,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { use } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 type Props = {
   params: Promise<{ id: string }>;
 };
 
 export default function MemberProfile({ params }: Props) {
+  const { t, language } = useLanguage();
   const resolvedParams = use(params);
   const id = resolvedParams.id;
   const member = team.find((m) => m.id === id);
@@ -22,14 +24,14 @@ export default function MemberProfile({ params }: Props) {
   }
 
   return (
-    <main dir="ltr" className="min-h-screen bg-white pt-30 pb-15 px-6">
+    <main className="min-h-screen bg-white pt-30 pb-15 px-6">
       <div className="max-w-5xl mx-auto">
         <Link href="/#team">
           <motion.button
-            whileHover={{ x: -5 }}
+            whileHover={{ x: language === 'ar' ? 5 : -5 }}
             className="flex items-center gap-2 text-slate-400 hover:text-blue-600 transition-colors mb-6 font-bold text-xs uppercase tracking-widest"
           >
-            <ArrowLeft size={16} /> Back to Team
+            {language === 'ar' ? <ArrowLeft size={16} className="rotate-180" /> : <ArrowLeft size={16} />} {t("back_to_team")}
           </motion.button>
         </Link>
 
@@ -41,7 +43,7 @@ export default function MemberProfile({ params }: Props) {
           >
             <Image
               src={member.image}
-              alt={member.name}
+              alt={language === 'ar' ? (member as any).nameAr : member.name}
               fill
               priority
               className="object-cover transition-all duration-700"
@@ -56,25 +58,25 @@ export default function MemberProfile({ params }: Props) {
               transition={{ delay: 0.2 }}
             >
               <span className="text-blue-600 font-bold text-[10px] uppercase tracking-[0.4em] block mb-4">
-                {member.role}
+                {language === 'ar' ? (member as any).roleAr : member.role}
               </span>
               <h1 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter mb-8  leading-tight">
-                {member.name}
+                {language === 'ar' ? (member as any).nameAr : member.name}
               </h1>
 
               <div className="space-y-8">
                 <div className="space-y-4">
                   <h4 className="text-[10px] font-black uppercase text-slate-400 tracking-widest">
-                    About
+                    {t("about_member")}
                   </h4>
                   <p className="text-slate-600 text-lg leading-relaxed font-medium max-w-xl whitespace-pre-line">
-                    {member.bio}
+                    {language === 'ar' ? (member as any).bioAr : member.bio}
                   </p>
                 </div>
 
                 <div className="space-y-4">
                   <h4 className="text-[10px] font-black uppercase text-slate-400 tracking-widest">
-                    Core Stack
+                    {t("core_stack")}
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {member.skills.map((skill, i) => (

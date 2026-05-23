@@ -1,13 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { features } from "@/data";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function About() {
+  const { t, language } = useLanguage();
+
+  const featuresList = [
+    { title: t("feature_1_title"), desc: t("feature_1_desc") },
+    { title: t("feature_2_title"), desc: t("feature_2_desc") },
+    { title: t("feature_3_title"), desc: t("feature_3_desc") },
+  ];
+
   return (
     <section
       id="about"
-      dir="ltr"
       className="py-24 bg-white relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -20,18 +27,18 @@ export default function About() {
                 viewport={{ once: true }}
                 className="text-blue-600 font-bold text-[11px] uppercase tracking-[0.4em] block"
               >
-                Beyond the Code
+                {t("about_badge")}
               </motion.span>
 
               <motion.h2
-                initial={{ opacity: 0, x: -30 }}
+                initial={{ opacity: 0, x: language === 'ar' ? 30 : -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
                 className="text-4xl md:text-5xl font-black text-slate-900 leading-[0.9] tracking-tighter"
               >
-                We don&rsquo;t just build apps. <br />
-                <span className="text-slate-300">We engineer growth.</span>
+                {t("about_title_part1")} <br />
+                <span className="text-slate-300">{t("about_title_part2")}</span>
               </motion.h2>
             </div>
 
@@ -42,22 +49,21 @@ export default function About() {
               viewport={{ once: true }}
               className="text-slate-500 text-lg md:text-xl font-medium leading-relaxed max-w-xl text-left"
             >
-              Basira Lens is a high-performance collective of engineers. We
-              transform raw data into strategic intelligence.
+              {t("about_desc")}
             </motion.p>
           </div>
 
           <div className="lg:w-1/2 grid grid-cols-1 gap-10">
-            {features.map((f, i) => (
+            {featuresList.map((f, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="group relative pl-10 border-l border-slate-200 hover:border-blue-600 transition-all duration-500 text-left"
+                className={`group relative ${language === 'ar' ? 'pr-10 border-r' : 'pl-10 border-l'} border-slate-200 hover:border-blue-600 transition-all duration-500 text-left`}
               >
-                <span className="absolute -left-3 top-0 bg-white px-2 text-[10px] font-black text-slate-300 group-hover:text-blue-600">
+                <span className={`absolute ${language === 'ar' ? '-right-3' : '-left-3'} top-0 bg-white px-2 text-[10px] font-black text-slate-300 group-hover:text-blue-600`}>
                   0{i + 1}
                 </span>
                 <h4 className="text-slate-900 font-black text-xl mb-2 uppercase tracking-tight">

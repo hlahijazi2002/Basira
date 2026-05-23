@@ -4,10 +4,13 @@ import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { t, language } = useLanguage();
 
   const handleScroll = useCallback(() => {
     setIsScrolled(window.scrollY > 50);
@@ -19,11 +22,11 @@ export default function Navbar() {
   }, [handleScroll]);
 
   const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "#about" },
-    { name: "Team", href: "#team" },
-    { name: "Services", href: "#services" },
-    { name: "Contact", href: "#contact" },
+    { name: t("nav_home"), href: "/" },
+    { name: t("nav_about"), href: "#about" },
+    { name: t("nav_team"), href: "#team" },
+    { name: t("nav_services"), href: "#services" },
+    { name: t("nav_contact"), href: "#contact" },
   ];
 
   return (
@@ -61,23 +64,27 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="hidden md:flex items-center">
+        <div className="hidden md:flex items-center gap-6">
+          <LanguageSwitcher />
           <Link
             href="#contact"
             className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-[13px] uppercase tracking-wider font-bold rounded-xl transition-transform active:scale-95 shadow-md shadow-blue-600/10"
           >
-            Start a Project
+            {t("nav_cta")}
           </Link>
         </div>
 
         {/* Mobile Toggle */}
-        <button
-          className="md:hidden text-slate-900 p-2 outline-none"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle Menu"
-        >
-          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+        <div className="md:hidden flex items-center gap-4">
+          <LanguageSwitcher />
+          <button
+            className="text-slate-900 p-2 outline-none"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle Menu"
+          >
+            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -108,7 +115,7 @@ export default function Navbar() {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="w-full py-4 bg-blue-600 text-white rounded-2xl font-bold uppercase tracking-wider"
               >
-                Start Now
+                {t("nav_cta_mobile")}
               </Link>
             </div>
           </motion.div>
