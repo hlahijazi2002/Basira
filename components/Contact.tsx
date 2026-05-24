@@ -34,10 +34,11 @@ export default function Contact() {
       template_id: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "YOUR_TEMPLATE_ID",
       user_id: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "YOUR_PUBLIC_KEY",
       template_params: {
-        user_name: formData.get("user_name"),
+        name: formData.get("user_name"),
+        message: formData.get("message"),
+        time: new Date().toLocaleString(language === 'ar' ? 'ar-EG' : 'en-US'),
         user_email: formData.get("user_email"),
         user_company: formData.get("user_company"),
-        message: formData.get("message"),
       },
     };
 
@@ -216,7 +217,7 @@ export default function Contact() {
                   disabled={isSending || isSuccess}
                   whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.98 }}
-                  className={`w-full font-black py-5 rounded-2xl flex items-center justify-center gap-3 transition-all shadow-xl active:scale-95 ${
+                  className={`group w-full font-black py-5 rounded-2xl flex items-center justify-center gap-3 transition-all shadow-xl active:scale-95 ${
                     isSuccess ? "bg-green-500 text-white" : "bg-slate-900 hover:bg-blue-600 text-white shadow-slate-900/10"
                   }`}
                 >
@@ -236,7 +237,7 @@ export default function Contact() {
                       </span>
                       <Send
                         size={18}
-                        className={`transition-transform ${language === 'ar' ? 'rotate-180 group-hover:-translate-x-1' : 'group-hover:translate-x-1'}`}
+                        className={`transition-transform ${language === 'ar' ? 'group-hover:-translate-y-1' : 'group-hover:translate-x-1'}`}
                       />
                     </>
                   )}

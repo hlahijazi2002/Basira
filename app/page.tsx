@@ -4,6 +4,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import About from "@/components/About";
 import Team from "@/components/Team";
+import FloatingChat from "@/components/FloatingChat";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Services />
       <Contact />
       <Footer />
+      <FloatingChat />
     </main>
   );
 }

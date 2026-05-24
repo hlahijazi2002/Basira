@@ -4,8 +4,9 @@ python-dotenv
 langchain
 langchain-openai
 langchain-pinecone
-langchain-xai
+langchain-groq
 pinecone-client
 pydantic
 pydantic-settings
 python-multipart
+pypdf

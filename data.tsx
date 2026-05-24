@@ -66,18 +66,19 @@ export const team = [
     name: "Hla Hijazi",
     nameAr: "حلا حجازي",
     role: "Full-Stack Developer & Software Engineer",
-    roleAr: "مطورة تطبيقات ويب متكاملة ومهندسة برمجيات",
+    roleAr: "مهندسة برمجيات ومطورة تطبيقات ويب متكاملة",
     image: "/HlaHijazi.jpeg",
     bio: `A Software Engineer and Full-Stack Developer driven by the challenge of transforming complex ideas into seamless digital solutions. 
 
-Specializing in modern web technologies like Next.js and TypeScript, I focus on building scalable architectures and intuitive user experiences. 
+    Specializing in modern web technologies like Next.js and TypeScript, I focus on building scalable architectures and intuitive user experiences. 
 
-I am committed to clean code, performance optimization, and staying at the forefront of technical innovation. With a strategic approach to problem-solving, I strive to deliver high-quality software that balances technical excellence with functional design.`,
-    bioAr: `مهندسة برمجيات ومطورة تطبيقات ويب متكاملة، يحفزني التحدي المتمثل في تحويل الأفكار المعقدة إلى حلول رقمية سلسة.
+    I am committed to clean code, performance optimization, and staying at the forefront of technical innovation. With a strategic approach to problem-solving, I strive to deliver high-quality software that balances technical excellence with functional design.`,
+    bioAr: `مهندسة برمجيات ومطورة ويب متكاملة (Full-Stack)، شغوفة بتحويل الأفكار المعقدة إلى حلول رقمية سلسة ومبتكرة.
 
-متخصصة في تقنيات الويب الحديثة مثل Next.js و TypeScript، أركز على بناء بنى تحتية قابلة للتوسع وتجارب مستخدم بديهية.
+    متخصصة في تقنيات الويب الحديثة مثل Next.js و TypeScript، حيث أركز على بناء معماريات برمجية قابلة للتوسع وتجارب مستخدم بديهية.
 
-أنا ملتزمة بالكود النظيف، وتحسين الأداء، والبقاء في طليعة الابتكار التقني. من خلال نهج استراتيجي لحل المشكلات، أسعى لتقديم برمجيات عالية الجودة توازن بين التميز التقني والتصميم الوظيفي.`,
+    ألتزم بمعايير الكود النظيف (Clean Code)، وتحسين الأداء الرقمي، ومواكبة أحدث الابتكارات التقنية. من خلال نهج استراتيجي لحل المشكلات، أسعى لتقديم برمجيات عالية الجودة توازن بين التميز التقني والتصميم الوظيفي الفعال.`,
+
     skills: [
       "Next.js",
       "React",
@@ -120,24 +121,22 @@ Tools I work with: Python, FastAPI, PostgreSQL, Docker, Git, Scikit-learn
 I take time to understand the problem before writing a single line of code — and I deliver work I can stand behind.
 
 If you need someone who understands both the data and the decision-making behind it, let's talk.`,
-    bioAr: `عالم بيانات ومهندس ذكاء اصطناعي يبني أنظمة تعلم آلي ومعالجة لغات طبيعية (NLP) تحول البيانات المعقدة إلى نتائج ملموسة وقابلة للقياس.
+    bioAr: `عالم بيانات ومهندس ذكاء اصطناعي، متخصص في بناء أنظمة تعلم آلي (Machine Learning) ومعالجة لغات طبيعية (NLP) تهدف إلى تحويل البيانات المعقدة إلى نتائج ملموسة وقابلة للقياس.
 
 مهاراتي الأساسية:
-✅ التعلم الآلي والنمذجة التنبؤية — التصنيف، هندسة الميزات، من البيانات الخام إلى نماذج جاهزة للإنتاج.
-✅ معالجة اللغات الطبيعية — المعالجة المسبقة للنصوص، TF-IDF، تضمين الكلمات، تصنيف النصوص.
-✅ البحث الدلالي والاسترجاع — الفهرسة الشعاعية، مسارات البحث المعتمدة على السياق.
-✅ تطوير برمجيات بلغة بايثون — كود نظيف، منظم، وجاهز للإنتاج.
+✅ التعلم الآلي والنمذجة التنبؤية — بدءاً من هندسة الميزات (Feature Engineering) وصولاً إلى النماذج الجاهزة للإنتاج.
+✅ معالجة اللغات الطبيعية — معالجة النصوص المتقدمة، TF-IDF، وتصنيف النصوص.
+✅ البحث الدلالي والاسترجاع — الفهرسة الشعاعية ومسارات البحث المعتمدة على السياق.
+✅ التطوير المرتكز على بايثون — كتابة أكواد نظيفة، منظمة، وجاهزة للبيئات التشغيلية.
 
-مشاريع قمت ببنائها:
-• RecipaAI — مساعد ذكاء اصطناعي يعتمد على RAG مع مسارات استرجاع وبحث دلالي على البيانات غير المنظمة.
-• كاشف الرسائل المزعجة (Spam) — باستخدام Naive Bayes و Logistic Regression مع استخراج ميزات TF-IDF.
-• كاشف الأخبار الزائفة في فلسطين — خط معالجة NLP كامل مع Decision Tree و Logistic Regression.
+أبرز المشاريع:
+• RecipaAI — مساعد ذكاء اصطناعي يعتمد على تقنية RAG للبحث الدلالي في البيانات غير المنظمة.
+• نظام كشف الرسائل المزعجة — باستخدام خوارزميات Naive Bayes و Logistic Regression.
+• كاشف الأخبار الزائفة — خط معالجة NLP متكامل لتحليل المصداقية.
 
-الأدوات التي أعمل بها: Python, FastAPI, PostgreSQL, Docker, Git, Scikit-learn.
+الأدوات التقنية: Python, FastAPI, PostgreSQL, Docker, Git, Scikit-learn.
 
-آخذ وقتي لفهم المشكلة قبل كتابة سطر واحد من الكود — وأقدم عملاً أفتخر به.
-
-إذا كنت بحاجة إلى شخص يفهم كلاً من البيانات وصناعة القرار وراءها، فلنتحدث.`,
+أؤمن بأهمية فهم المشكلة بعمق قبل البدء في التنفيذ لضمان تقديم حلول تقنية رصينة وموثوقة.`,
     skills: [
       "Machine Learning",
       "NLP (Natural Language Processing)",
@@ -161,7 +160,7 @@ If you need someone who understands both the data and the decision-making behind
     roleAr: "مطور خلفية | مهندس رؤية حاسوبية",
     image: "/MahmoudModalal.jpg",
     bio: `Computer Engineer specializing in Python backend development and AI-powered computer vision, with a GPA of 91%. Builds production-grade SaaS platforms using Django, DRF, and Clean Architecture, and develops real-world CV systems with YOLOv8, DeepSort, and InsightFace. Passionate about scalable systems and intelligent solutions — from database design to model optimization.`,
-    bioAr: `مهندس حاسوب متخصص في تطوير الخلفية بلغة بايثون والرؤية الحاسوبية المدعومة بالذكاء الاصطناعي، بمعدل تراكمي 91٪. أقوم ببناء منصات SaaS احترافية باستخدام Django و DRF ومعمارية نظيفة (Clean Architecture)، وأطور أنظمة رؤية حاسوبية واقعية باستخدام YOLOv8 و DeepSort و InsightFace. شغوف بالأنظمة القابلة للتوسع والحلول الذكية — من تصميم قواعد البيانات إلى تحسين النماذج.`,
+    bioAr: `مهندس حاسوب متميز متخصص في تطوير الأنظمة الخلفية (Backend) بلغة بايثون والرؤية الحاسوبية (Computer Vision) المدعومة بالذكاء الاصطناعي. أقوم ببناء منصات SaaS احترافية باستخدام Django و DRF مع الالتزام بمعمارية البرمجيات النظيفة (Clean Architecture). أمتلك خبرة واسعة في تطوير أنظمة رؤية حاسوبية واقعية باستخدام تقنيات YOLOv8 و DeepSort و InsightFace. شغوف بتطوير الأنظمة القابلة للتوسع والحلول الذكية، بدءاً من تصميم قواعد البيانات وصولاً إلى تحسين النماذج البرمجية.`,
     skills: [
       "Django & DRF",
       "Computer Vision",
@@ -183,14 +182,14 @@ If you need someone who understands both the data and the decision-making behind
     name: "Ahmed Al-Yazouri",
     nameAr: "أحمد اليازوري",
     role: "Data Science and Artificial Intelligence",
-    roleAr: "علوم البيانات والذكاء الاصطناعي",
+    roleAr: "خبير علوم البيانات والذكاء الاصطناعي",
     image: "/AhmedYazouri.jpg",
     bio: `Ahmed Al-Yazouri is a Data Science and Artificial Intelligence expert focused on delivering intelligent, data-driven solutions that transform complex data into actionable insights.
 
 He specializes in data analysis, database architecture, and scalable system design, with hands-on experience in SQL and PostgreSQL. His expertise extends to building advanced AI systems using Machine Learning, Retrieval-Augmented Generation (RAG), and Multi-Agent architectures, enabling high-performance and intelligent decision-support systems.`,
-    bioAr: `أحمد اليازوري خبير في علوم البيانات والذكاء الاصطناعي، يركز على تقديم حلول ذكية تعتمد على البيانات وتحول البيانات المعقدة إلى رؤى قابلة للتنفيذ.
+    bioAr: `أحمد اليازوري خبير في علوم البيانات والذكاء الاصطناعي، يركز على تقديم حلول ذكية تعتمد على تحليل البيانات لتحويل المعلومات المعقدة إلى رؤى استراتيجية قابلة للتنفيذ.
 
-يتخصص في تحليل البيانات، ومعمارية قواعد البيانات، وتصميم الأنظمة القابلة للتوسع، مع خبرة عملية في SQL و PostgreSQL. تمتد خبرته إلى بناء أنظمة ذكاء اصطناعي متقدمة باستخدام التعلم الآلي، والاسترجاع المعزز بالتوليد (RAG)، ومعماريات الوكلاء المتعددين (Multi-Agent)، مما يمكن من بناء أنظمة دعم قرار ذكية وعالية الأداء.`,
+يتخصص في تحليل البيانات، هندسة قواعد البيانات، وتصميم الأنظمة القابلة للتوسع، مع خبرة عملية معمقة في SQL و PostgreSQL. تمتد خبرته لتشمل بناء أنظمة ذكاء اصطناعي متقدمة تعتمد على التعلم الآلي، الاسترجاع المعزز بالتوليد (RAG)، ومعماريات الوكلاء المتعددين (Multi-Agent)، مما يساهم في بناء أنظمة دعم قرار ذكية وعالية الكفاءة.`,
     skills: [
       "Data Science",
       "Artificial Intelligence",

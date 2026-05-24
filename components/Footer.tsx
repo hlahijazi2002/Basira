@@ -11,7 +11,7 @@ export default function Footer() {
       className="bg-white py-6 px-16 border-t border-slate-100 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
-        <div className="flex flex-col gap-2 text-center md:text-left">
+        <div className={`flex flex-col gap-2 text-center ${language === 'ar' ? 'md:text-right' : 'md:text-left'}`}>
           <div className="text-2xl font-black text-slate-900 tracking-tighter uppercase">
             BASIRA <span className="text-blue-600">LENS</span>
           </div>

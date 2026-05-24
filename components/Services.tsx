@@ -10,10 +10,6 @@ export default function Services() {
   const { t, language } = useLanguage();
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-  const globalTechStack = [
-    "Python", "R", "SQL", "Pandas", "Scikit-learn", "Power BI", "Excel", "Tableau", "FastAPI", "Next.js"
-  ];
-
   return (
     <section id="services" className="py-24 bg-white border-t border-slate-100 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
@@ -103,7 +99,7 @@ export default function Services() {
                   <span className={`text-[10px] font-black uppercase tracking-[0.2em] transition-colors duration-500 ${
                     hoveredIndex === i ? "text-blue-600" : "text-slate-300"
                   }`}>
-                    Pillar 0{i + 1}
+                    {t("service_pillar")} 0{i + 1}
                   </span>
                   <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500 ${
                     hoveredIndex === i ? "bg-blue-600 text-white shadow-lg" : "bg-white border border-slate-200 text-slate-300"
@@ -114,31 +110,6 @@ export default function Services() {
               </motion.div>
             );
           })}
-        </div>
-
-        {/* Global Tech Stack Section */}
-        <div className="mt-32 pt-20 border-t border-slate-100">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-            <div className={`lg:w-1/3 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-              <h4 className="text-2xl font-black text-slate-900 mb-4 uppercase tracking-tighter">
-                {t("tech_stack_title")}
-              </h4>
-              <p className="text-slate-400 text-sm font-medium leading-relaxed">
-                {t("tech_stack_desc")}
-              </p>
-            </div>
-            
-            <div className="lg:w-2/3 flex flex-wrap justify-center lg:justify-end gap-3">
-              {globalTechStack.map((tool, i) => (
-                <span
-                  key={i}
-                  className="px-6 py-3 bg-slate-50 border border-slate-100 rounded-full text-slate-600 text-[11px] font-black uppercase tracking-widest hover:border-blue-500 hover:text-blue-600 hover:bg-white transition-all cursor-default shadow-sm"
-                >
-                  {tool}
-                </span>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>
