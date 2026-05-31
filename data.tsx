@@ -1,4 +1,15 @@
-import { Brain, Code2, Layout, LineChart, Search, Eye, BarChart, Network, Bot, MessageCircle } from "lucide-react";
+import {
+  Brain,
+  Code2,
+  Layout,
+  LineChart,
+  Search,
+  Eye,
+  BarChart,
+  Network,
+  Bot,
+  MessageCircle,
+} from "lucide-react";
 
 export const features = [
   {
@@ -7,7 +18,7 @@ export const features = [
   },
   {
     title: "Our Mission",
-    desc: "Empowering organizations through innovative AI solutions that balance power and simplicity.",
+    desc: "Empowering organizations through data analysis and AI solutions that balance power and simplicity.",
   },
   {
     title: "Our Goal",
@@ -20,43 +31,73 @@ export const services = [
     title: "Autonomous AI & Intelligent Agents",
     desc: "Designing self-operating AI agents capable of executing complex workflows and autonomous reasoning.",
     icon: Bot,
-    details: ["Agentic Workflows", "Multi-Agent Systems", "Autonomous Reasoning", "API & Tool Integration"],
-    tools: ["LangChain", "CrewAI", "Grok", "Python"]
+    details: [
+      "Agentic Workflows",
+      "Multi-Agent Systems",
+      "Autonomous Reasoning",
+      "API & Tool Integration",
+    ],
+    tools: ["LangChain", "CrewAI", "Grok", "Python"],
   },
   {
     title: "Predictive Analytics & Machine Learning",
     desc: "Forecasting sales, customer behavior, and patterns using high-precision neural networks and ML models.",
     icon: Brain,
-    details: ["Demand Forecasting", "Churn Prediction", "Fraud Detection", "Neural Network Design"],
-    tools: ["Scikit-learn", "Pandas", "XGBoost", "Python"]
+    details: [
+      "Demand Forecasting",
+      "Churn Prediction",
+      "Fraud Detection",
+      "Neural Network Design",
+    ],
+    tools: ["Scikit-learn", "Pandas", "XGBoost", "Python"],
   },
   {
     title: "Conversational AI & NLP",
     desc: "Building semantic search engines and intelligent chatbots for human-like interaction and text analysis.",
     icon: MessageCircle,
-    details: ["Custom Chatbots", "Semantic Search", "Sentiment Analysis", "Entity Extraction"],
-    tools: ["OpenAI", "Grok", "NLTK", "FastAPI"]
+    details: [
+      "Custom Chatbots",
+      "Semantic Search",
+      "Sentiment Analysis",
+      "Entity Extraction",
+    ],
+    tools: ["OpenAI", "Grok", "NLTK", "FastAPI"],
   },
   {
     title: "Computer Vision & Visual Intelligence",
     desc: "Developing real-time monitoring and object detection systems through advanced visual AI models.",
     icon: Eye,
-    details: ["Object Recognition", "Facial Analysis", "OCR Systems", "Real-time Video Analytics"],
-    tools: ["YOLOv8", "OpenCV", "PyTorch", "Python"]
+    details: [
+      "Object Recognition",
+      "Facial Analysis",
+      "OCR Systems",
+      "Real-time Video Analytics",
+    ],
+    tools: ["YOLOv8", "OpenCV", "PyTorch", "Python"],
   },
   {
     title: "Strategic Analytics & Business Intelligence",
     desc: "Transforming complex data into actionable intelligence through SPSS analysis, R programming, Power BI dashboards, and advanced statistical modeling.",
     icon: BarChart,
-    details: ["Survey Analytics (SPSS & R)", "Statistical Computing (R)", "Interactive Dashboards", "Strategic Data Storytelling"],
-    tools: ["SPSS", "R Language", "Power BI", "Excel"]
+    details: [
+      "Survey Analytics (SPSS & R)",
+      "Statistical Computing (R)",
+      "Interactive Dashboards",
+      "Strategic Data Storytelling",
+    ],
+    tools: ["SPSS", "R Language", "Power BI", "Excel"],
   },
   {
     title: "Full-Stack AI-Native Development",
     desc: "Architecting scalable, high-performance web ecosystems seamlessly integrated with intelligent AI backends.",
     icon: Code2,
-    details: ["Custom Web Apps", "AI Integration", "Cloud-Native Systems", "Performance Optimization"],
-    tools: ["Next.js", "FastAPI", "React", "TypeScript"]
+    details: [
+      "Custom Web Apps",
+      "AI Integration",
+      "Cloud-Native Systems",
+      "Performance Optimization",
+    ],
+    tools: ["Next.js", "FastAPI", "React", "TypeScript"],
   },
 ];
 
@@ -64,7 +105,7 @@ export const team = [
   {
     id: "1",
     name: "Hla Hijazi",
-    nameAr: "حلا حجازي",
+    nameAr: "هلا حجازي",
     role: "Full-Stack Developer & Software Engineer",
     roleAr: "مهندسة برمجيات ومطورة تطبيقات ويب متكاملة",
     image: "/HlaHijazi.jpeg",
