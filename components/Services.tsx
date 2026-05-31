@@ -1,110 +1,150 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { services } from "../data";
-import { ArrowUpRight, Cpu, Layers } from "lucide-react";
+import { Cpu, Layers, ArrowUpRight } from "lucide-react";
 import { useLanguage, translations } from "@/context/LanguageContext";
-import { useState } from "react";
 
 export default function Services() {
   const { t, language } = useLanguage();
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section id="services" className="py-24 bg-white border-t border-slate-100 overflow-hidden">
+    <section
+      id="services"
+      className="py-24 bg-white border-t border-slate-100 overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className={`mb-24 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className={`mb-24 ${language === "ar" ? "text-right" : "text-left"}`}
+        >
           <span className="text-blue-600 font-bold text-[11px] uppercase tracking-[0.4em] block mb-4">
             {t("services_badge")}
           </span>
           <h2 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter mb-6">
-            {t("services_title_part1")} <span className="text-slate-300">{t("services_title_part2")}</span>
+            {t("services_title_part1")}{" "}
+            <span className="text-slate-300">{t("services_title_part2")}</span>
           </h2>
-          <div className={`w-20 h-1.5 bg-blue-600 rounded-full ${language === 'ar' ? 'mr-0 ml-auto' : ''}`} />
-        </div>
+          <div
+            className={`w-20 h-1.5 bg-blue-600 rounded-full ${language === "ar" ? "mr-0 ml-auto" : ""}`}
+          />
+        </motion.div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Services List */}
+        <div className="flex flex-col gap-6">
           {services.map((s, i) => {
             const IconComponent = s.icon;
-            const details = (translations[language] as any)[`service_${i + 1}_details`] || [];
-            const tools = s.tools || [];
+            const details =
+              (translations[language] as any)[`service_${i + 1}_details`] || [];
+            const tools: string[] = s.tools || [];
+            const isEven = i % 2 === 0;
 
             return (
               <motion.div
                 key={i}
-                onMouseEnter={() => setHoveredIndex(i)}
-                onMouseLeave={() => setHoveredIndex(null)}
-                className={`relative group p-8 rounded-[2.5rem] border transition-all duration-700 cursor-default min-h-[480px] flex flex-col justify-between overflow-hidden ${
-                  hoveredIndex === i 
-                    ? "bg-white border-blue-200 shadow-2xl shadow-blue-500/10 scale-[1.02] z-20" 
-                    : "bg-slate-50 border-slate-100"
-                }`}
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.6, delay: i * 0.08, ease: "easeOut" }}
+                className={`flex flex-col ${isEven ? "md:flex-row" : "md:flex-row-reverse"} gap-0 rounded-[2.5rem] border border-slate-100 bg-slate-50 hover:border-blue-200 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 overflow-hidden group`}
               >
-                {/* Background Accent Animation */}
-                <div className={`absolute -right-20 -top-20 w-64 h-64 bg-blue-50 rounded-full blur-3xl transition-opacity duration-700 ${hoveredIndex === i ? "opacity-100" : "opacity-0"}`} />
+                {/* Left/Right: Main Content */}
+                <div className="flex-1 p-10 flex flex-col justify-between">
+                  <div>
+                    {/* Icon + Title */}
+                    <div
+                      className={`flex items-center gap-4 mb-6 ${language === "ar" ? "flex-row-reverse" : ""}`}
+                    >
+                      <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-white border border-slate-200 text-slate-400 shadow-sm group-hover:bg-blue-600 group-hover:text-white group-hover:shadow-xl transition-all duration-500 shrink-0">
+                        {IconComponent && <IconComponent size={28} />}
+                      </div>
+                      <h3
+                        className={`text-2xl font-black uppercase tracking-tight text-slate-900 ${language === "ar" ? "text-right" : "text-left"}`}
+                      >
+                        {t(`service_${i + 1}_title`)}
+                      </h3>
+                    </div>
 
-                <div className="relative z-10">
-                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-8 transition-all duration-500 ${
-                    hoveredIndex === i ? "bg-blue-600 text-white shadow-xl shadow-blue-600/20" : "bg-white border border-slate-200 text-slate-400 shadow-sm"
-                  }`}>
-                    {IconComponent && <IconComponent size={28} />}
-                  </div>
-
-                  <h3 className="text-2xl font-black mb-6 uppercase tracking-tight leading-tight text-slate-900">
-                    {t(`service_${i + 1}_title`)}
-                  </h3>
-
-                  <div className="space-y-8">
                     {/* Description */}
-                    <p className={`text-sm leading-relaxed font-medium transition-colors duration-500 ${hoveredIndex === i ? "text-slate-600" : "text-slate-400"}`}>
+                    <p
+                      className={`text-sm leading-relaxed text-slate-500 font-medium mb-8 ${language === "ar" ? "text-right" : "text-left"}`}
+                    >
                       {t(`service_${i + 1}_desc`)}
                     </p>
 
-                    {/* Expertise List (Reveal on Hover) */}
-                    <div className={`space-y-4 transition-all duration-700 ${hoveredIndex === i ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"}`}>
-                      <div className="space-y-3">
-                        <div className="flex items-center gap-2 text-[10px] font-black text-blue-600 uppercase tracking-widest mb-2">
-                          <Layers size={12} /> {t("expertise_label")}
-                        </div>
-                        <div className="grid grid-cols-1 gap-2">
-                          {details.map((detail: string, idx: number) => (
-                            <div key={idx} className="flex items-center gap-2 text-xs font-bold text-slate-700 uppercase tracking-tight">
-                              <div className="w-1.5 h-1.5 bg-blue-500 rounded-full shrink-0" />
-                              {detail}
-                            </div>
-                          ))}
-                        </div>
+                    {/* Tools */}
+                    <div>
+                      <div
+                        className={`flex items-center gap-2 text-[10px] font-black text-cyan-600 uppercase tracking-widest mb-3 ${language === "ar" ? "flex-row-reverse" : ""}`}
+                      >
+                        <Cpu size={12} /> {t("tools_label")}
                       </div>
-
-                      {/* Tech Stack for this service */}
-                      <div className="pt-4">
-                        <div className="flex items-center gap-2 text-[10px] font-black text-cyan-600 uppercase tracking-widest mb-3">
-                          <Cpu size={12} /> {t("tools_label")}
-                        </div>
-                        <div className="flex flex-wrap gap-1.5">
-                          {tools.map((tool, idx) => (
-                            <span key={idx} className="px-2.5 py-1 bg-slate-100 text-slate-500 text-[9px] font-black rounded-lg border border-slate-200/50 uppercase tracking-tighter hover:bg-white hover:border-blue-300 hover:text-blue-600 transition-all">
-                              {tool}
-                            </span>
-                          ))}
-                        </div>
+                      <div
+                        className={`flex flex-wrap gap-1.5 ${language === "ar" ? "justify-end" : ""}`}
+                      >
+                        {tools.map((tool, idx) => (
+                          <span
+                            key={idx}
+                            className="px-2.5 py-1 bg-white text-slate-500 text-[9px] font-black rounded-lg border border-slate-200 uppercase tracking-tighter hover:border-blue-300 hover:text-blue-600 transition-all"
+                          >
+                            {tool}
+                          </span>
+                        ))}
                       </div>
                     </div>
                   </div>
+
+                  {/* Footer */}
+                  <div
+                    className={`flex items-center justify-between pt-8 mt-8 border-t border-slate-100 ${language === "ar" ? "flex-row-reverse" : ""}`}
+                  >
+                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-300 group-hover:text-blue-600 transition-colors duration-500">
+                      {t("service_pillar")} 0{i + 1}
+                    </span>
+                    <a
+                      href="#contact"
+                      className={`flex items-center gap-2 px-4 py-2 rounded-full bg-blue-600 text-white text-[10px] font-black uppercase tracking-widest hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-600/20 ${language === "ar" ? "flex-row-reverse" : ""}`}
+                    >
+                      {t("contact naw")} <ArrowUpRight size={14} />
+                    </a>
+                  </div>
                 </div>
 
-                <div className="relative z-10 w-full pt-8 mt-8 border-t border-slate-100 flex justify-between items-center">
-                  <span className={`text-[10px] font-black uppercase tracking-[0.2em] transition-colors duration-500 ${
-                    hoveredIndex === i ? "text-blue-600" : "text-slate-300"
-                  }`}>
-                    {t("service_pillar")} 0{i + 1}
-                  </span>
-                  <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500 ${
-                    hoveredIndex === i ? "bg-blue-600 text-white shadow-lg" : "bg-white border border-slate-200 text-slate-300"
-                  }`}>
-                    <ArrowUpRight size={20} />
+                {/* Divider */}
+                <div className="hidden md:block w-px bg-slate-100 group-hover:bg-blue-100 transition-colors duration-500" />
+
+                {/* Right/Left: Expertise */}
+                <div className="w-full md:w-[320px] p-10 bg-white flex flex-col justify-center">
+                  <div
+                    className={`flex items-center gap-2 text-[10px] font-black text-blue-600 uppercase tracking-widest mb-6 ${language === "ar" ? "flex-row-reverse" : ""}`}
+                  >
+                    <Layers size={12} /> {t("expertise_label")}
+                  </div>
+                  <div className="flex flex-col gap-3">
+                    {details.map((detail: string, idx: number) => (
+                      <motion.div
+                        key={idx}
+                        initial={{ opacity: 0, x: isEven ? 20 : -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{
+                          duration: 0.4,
+                          delay: i * 0.08 + idx * 0.06,
+                        }}
+                        className={`flex items-center gap-3 ${language === "ar" ? "flex-row-reverse" : ""}`}
+                      >
+                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full shrink-0" />
+                        <span
+                          className={`text-xs font-bold text-slate-700 uppercase tracking-tight ${language === "ar" ? "text-right" : "text-left"}`}
+                        >
+                          {detail}
+                        </span>
+                      </motion.div>
+                    ))}
                   </div>
                 </div>
               </motion.div>
