@@ -13,9 +13,34 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
-  title: "BasiraLens",
+  title: "BasiraLens | AI & Data Analysis Solutions",
   description:
-    "A company specialized in data analysis, AI, and smart web development.",
+    "BasiraLens specializes in AI solutions, data analysis, machine learning, computer vision, and smart web development. Empowering organizations with intelligent technology.",
+  keywords: [
+    "AI solutions",
+    "data analysis",
+    "machine learning",
+    "computer vision",
+    "smart web development",
+    "artificial intelligence",
+    "business intelligence",
+    "NLP",
+    "predictive analytics",
+    "تحليل البيانات",
+    "الذكاء الاصطناعي",
+    "تطوير المواقع",
+    "حلول تقنية",
+  ],
+  openGraph: {
+    title: "BasiraLens | AI & Data Analysis Solutions",
+    description:
+      "Empowering organizations through data analysis and innovative AI solutions.",
+    url: "https://basiralens.vercel.app",
+    siteName: "BasiraLens",
+    locale: "ar_AR",
+    alternateLocale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
