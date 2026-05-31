@@ -8,14 +8,14 @@ import FloatingChat from "@/components/FloatingChat";
 
 export default function Home() {
   return (
-    <main className="relative bg-slate-950">
-      <Hero />
-      <About />
-      <Team />
-      <Services />
-      <Contact />
-      <Footer />
-      <FloatingChat />
-    </main>
+    <h1>test</h1>
+    // <main className="relative bg-slate-950">
+    //   <Hero />
+    //   <About />
+    //   <Team />
+    //   <Services />
+    //   <Contact />
+    //   <Footer />
+    // </main>
   );
 }
