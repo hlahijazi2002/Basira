@@ -102,6 +102,23 @@ export const services = [
 ];
 
 export const team = [
+  // {
+  //   id: "0",
+  //   name: "Anwar Abu Al-Husain",
+  //   nameAr: "أنوار أبو الحصين",
+  //   role: "Leader",
+  //   roleAr: "القائدة",
+  //   image: "/AnwarAbuAlHusain.jpg",
+  //   bio: ``,
+  //   bioAr: ``,
+  //   skills: [],
+  //   contact: {
+  //     linkedin: "",
+  //     whatsApp: "",
+  //     email: "",
+  //     upwork: "",
+  //   },
+  // },
   {
     id: "1",
     name: "Hla Hijazi",
