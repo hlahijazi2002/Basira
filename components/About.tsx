@@ -13,13 +13,12 @@ export default function About() {
   ];
 
   return (
-    <section
-      id="about"
-      className="py-24 bg-white relative overflow-hidden"
-    >
+    <section id="about" className="py-24 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-start gap-20">
-          <div className={`lg:w-1/2 space-y-8 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+          <div
+            className={`lg:w-1/2 space-y-8 ${language === "ar" ? "text-right" : "text-left"}`}
+          >
             <div className="space-y-4">
               <motion.span
                 initial={{ opacity: 0 }}
@@ -31,11 +30,11 @@ export default function About() {
               </motion.span>
 
               <motion.h2
-                initial={{ opacity: 0, x: language === 'ar' ? 30 : -30 }}
+                initial={{ opacity: 0, x: language === "ar" ? 30 : -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="text-4xl md:text-5xl font-black text-slate-900 leading-[0.9] tracking-tighter"
+                className="text-4xl md:text-5xl font-black text-slate-900  tracking-tighter"
               >
                 {t("about_title_part1")} <br />
                 <span className="text-slate-300">{t("about_title_part2")}</span>
@@ -47,7 +46,7 @@ export default function About() {
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
               viewport={{ once: true }}
-              className={`text-slate-500 text-lg md:text-xl font-medium leading-relaxed max-w-xl ${language === 'ar' ? 'text-right' : 'text-left'}`}
+              className={`text-slate-500 text-lg md:text-xl font-medium leading-relaxed max-w-xl ${language === "ar" ? "text-right" : "text-left"}`}
             >
               {t("about_desc")}
             </motion.p>
@@ -61,9 +60,11 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className={`group relative ${language === 'ar' ? 'pr-10 border-r text-right' : 'pl-10 border-l text-left'} border-slate-200 hover:border-blue-600 transition-all duration-500`}
+                className={`group relative ${language === "ar" ? "pr-10 border-r text-right" : "pl-10 border-l text-left"} border-slate-200 hover:border-blue-600 transition-all duration-500`}
               >
-                <span className={`absolute ${language === 'ar' ? '-right-3' : '-left-3'} top-0 bg-white px-2 text-[10px] font-black text-slate-300 group-hover:text-blue-600`}>
+                <span
+                  className={`absolute ${language === "ar" ? "-right-3" : "-left-3"} top-0 bg-white px-2 text-[10px] font-black text-slate-300 group-hover:text-blue-600`}
+                >
                   0{i + 1}
                 </span>
                 <h4 className="text-slate-900 font-black text-xl mb-2 uppercase tracking-tight">

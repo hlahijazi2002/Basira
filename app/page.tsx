@@ -3,16 +3,24 @@ import Services from "@/components/Services";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import About from "@/components/About";
-import Team from "@/components/Team";
 import FloatingChat from "@/components/FloatingChat";
+import WhyUs from "@/components/WhyUs";
+import Process from "@/components/Process";
+import Industries from "@/components/Industries";
+import Technologies from "@/components/Technologies";
+import CaseStudies from "@/components/CaseStudies";
 
 export default function Home() {
   return (
     <main className="relative bg-slate-950">
       <Hero />
       <About />
-      <Team />
       <Services />
+      <WhyUs />
+      <Process />
+      <Industries />
+      <Technologies />
+      <CaseStudies />
       <Contact />
       <Footer />
       <FloatingChat />

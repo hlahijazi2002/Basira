@@ -28,76 +28,29 @@ export const features = [
 
 export const services = [
   {
-    title: "Autonomous AI & Intelligent Agents",
-    desc: "Designing self-operating AI agents capable of executing complex workflows and autonomous reasoning.",
-    icon: Bot,
-    details: [
-      "Agentic Workflows",
-      "Multi-Agent Systems",
-      "Autonomous Reasoning",
-      "API & Tool Integration",
-    ],
-    tools: ["LangChain", "CrewAI", "Grok", "Python"],
-  },
-  {
-    title: "Predictive Analytics & Machine Learning",
-    desc: "Forecasting sales, customer behavior, and patterns using high-precision neural networks and ML models.",
-    icon: Brain,
-    details: [
-      "Demand Forecasting",
-      "Churn Prediction",
-      "Fraud Detection",
-      "Neural Network Design",
-    ],
-    tools: ["Scikit-learn", "Pandas", "XGBoost", "Python"],
-  },
-  {
-    title: "Conversational AI & NLP",
-    desc: "Building semantic search engines and intelligent chatbots for human-like interaction and text analysis.",
-    icon: MessageCircle,
-    details: [
-      "Custom Chatbots",
-      "Semantic Search",
-      "Sentiment Analysis",
-      "Entity Extraction",
-    ],
-    tools: ["OpenAI", "Grok", "NLTK", "FastAPI"],
-  },
-  {
-    title: "Computer Vision & Visual Intelligence",
-    desc: "Developing real-time monitoring and object detection systems through advanced visual AI models.",
-    icon: Eye,
-    details: [
-      "Object Recognition",
-      "Facial Analysis",
-      "OCR Systems",
-      "Real-time Video Analytics",
-    ],
-    tools: ["YOLOv8", "OpenCV", "PyTorch", "Python"],
-  },
-  {
-    title: "Strategic Analytics & Business Intelligence",
-    desc: "Transforming complex data into actionable intelligence through SPSS analysis, R programming, Power BI dashboards, and advanced statistical modeling.",
+    title: "Business Analytics & Decision Intelligence",
     icon: BarChart,
-    details: [
-      "Survey Analytics (SPSS & R)",
-      "Statistical Computing (R)",
-      "Interactive Dashboards",
-      "Strategic Data Storytelling",
-    ],
-    tools: ["SPSS", "R Language", "Power BI", "Excel"],
+    tools: ["Python", "SQL", "Excel", "Power BI"],
   },
   {
-    title: "Full-Stack AI-Native Development",
-    desc: "Architecting scalable, high-performance web ecosystems seamlessly integrated with intelligent AI backends.",
-    icon: Code2,
-    details: [
-      "Custom Web Apps",
-      "AI Integration",
-      "Cloud-Native Systems",
-      "Performance Optimization",
-    ],
-    tools: ["Next.js", "FastAPI", "React", "TypeScript"],
+    title: "Business Intelligence & Data Visualization",
+    icon: Layout,
+    tools: ["Power BI", "Tableau", "Looker Studio", "Excel"],
+  },
+  {
+    title: "Predictive Analytics & AI Solutions",
+    icon: Brain,
+    tools: ["Python", "Scikit-learn", "XGBoost", "Pandas"],
+  },
+  {
+    title: "AI Automation & Intelligent Agents",
+    icon: Bot,
+    tools: ["LangChain", "CrewAI", "OpenAI", "FastAPI"],
+  },
+  {
+    title: "Research & Academic Analytics",
+    icon: LineChart,
+    tools: ["SPSS", "Python", "R", "Excel"],
   },
 ];
 
