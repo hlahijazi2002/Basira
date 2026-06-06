@@ -16,7 +16,7 @@ export default function Team() {
           className={`mb-16 flex flex-col md:flex-row md:items-end justify-between gap-4 ${language === "ar" ? "text-right" : "text-left"}`}
         >
           <div>
-            <span className="text-blue-600 font-bold text-[10px] uppercase tracking-[0.4em] block mb-2">
+            <span className="text-[var(--color-brand)] font-bold text-[10px] uppercase tracking-[0.4em] block mb-2">
               {t("team_badge")}
             </span>
             <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter">
@@ -60,7 +60,7 @@ export default function Team() {
                   <motion.div
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
-                    className="absolute bottom-2 right-2 w-10 h-10 flex items-center justify-center bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300"
+                    className="absolute bottom-2 right-2 w-10 h-10 flex items-center justify-center bg-[var(--color-brand)] text-white rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300"
                   >
                     <Eye size={18} strokeWidth={2.5} />
                   </motion.div>
@@ -71,7 +71,7 @@ export default function Team() {
               <h3 className="text-base font-black text-slate-900 uppercase tracking-tight mb-1">
                 {language === "ar" ? (member as any).nameAr : member.name}
               </h3>
-              <p className="text-[10px] text-blue-600 font-bold tracking-widest uppercase leading-relaxed">
+              <p className="text-[10px] text-[var(--color-brand)] font-bold tracking-widest uppercase leading-relaxed">
                 {language === "ar" ? (member as any).roleAr : member.role}
               </p>
             </motion.div>

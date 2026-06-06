@@ -38,28 +38,26 @@ export default function Navbar() {
       <div
         className={`max-w-7xl mx-auto flex items-center justify-between px-6 py-3 rounded-2xl border transition-all duration-500 ${
           isScrolled
-            ? "bg-slate-50/80 border-slate-200/60 backdrop-blur-xl shadow-sm"
+            ? "bg-white/80 border-slate-200/60 backdrop-blur-xl shadow-sm"
             : "bg-transparent border-transparent"
         }`}
       >
-        {/* Logo */}
         <Link
           href="/"
           className="text-xl font-black text-slate-900 tracking-tighter uppercase shrink-0"
         >
-          BASIRA <span className="text-blue-600">LENS</span>
+          BASIRA <span className="text-[var(--color-brand)]">LENS</span>
         </Link>
 
-        {/*  Desktop Navigation*/}
         <div className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="text-slate-600 text-[13px] uppercase tracking-widest font-bold hover:text-blue-600 transition-colors relative group"
+              className="text-slate-600 text-[13px] uppercase tracking-widest font-bold hover:text-[var(--color-brand)] transition-colors relative group"
             >
               {link.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--color-brand)] transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
         </div>
@@ -68,13 +66,12 @@ export default function Navbar() {
           <LanguageSwitcher />
           <Link
             href="#contact"
-            className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-[13px] uppercase tracking-wider font-bold rounded-xl transition-transform active:scale-95 shadow-md shadow-blue-600/10"
+            className="px-6 py-2.5 bg-[var(--color-brand)] hover:bg-[var(--color-brand-dark)] text-white text-[13px] uppercase tracking-wider font-bold rounded-xl transition-all active:scale-95 shadow-md shadow-[var(--color-brand)]/10"
           >
             {t("nav_cta")}
           </Link>
         </div>
 
-        {/* Mobile Toggle */}
         <div className="md:hidden flex items-center gap-4">
           <LanguageSwitcher />
           <button
@@ -87,7 +84,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence mode="wait">
         {isMobileMenuOpen && (
           <motion.div
@@ -104,7 +100,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-slate-700 text-lg font-bold hover:text-blue-600 uppercase tracking-tight"
+                  className="text-slate-700 text-lg font-bold hover:text-[var(--color-brand)] uppercase tracking-tight"
                 >
                   {link.name}
                 </Link>
@@ -113,7 +109,7 @@ export default function Navbar() {
               <Link
                 href="#contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="w-full py-4 bg-blue-600 text-white rounded-2xl font-bold uppercase tracking-wider"
+                className="w-full py-4 bg-[var(--color-brand)] hover:bg-[var(--color-brand-dark)] text-white rounded-2xl font-bold uppercase tracking-wider transition-all"
               >
                 {t("nav_cta_mobile")}
               </Link>

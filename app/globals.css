@@ -2,6 +2,18 @@
 
 @theme {
   --font-cairo: "Cairo", sans-serif;
+  --animate-marquee: marquee 30s linear infinite;
+  --color-brand: #0a84ff;
+  --color-brand-dark: #003b8e;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 html {
@@ -10,7 +22,7 @@ html {
 
 body {
   font-family: var(--font-cairo);
-  @apply bg-slate-950 text-slate-100 antialiased;
+  @apply bg-white text-slate-900 antialiased;
 }
 
 ::-webkit-scrollbar {
@@ -20,8 +32,9 @@ body {
   @apply bg-slate-100;
 }
 ::-webkit-scrollbar-thumb {
-  @apply bg-blue-600 rounded-full;
+  background-color: var(--color-brand);
+  border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-blue-400;
+  background-color: var(--color-brand-dark);
 }

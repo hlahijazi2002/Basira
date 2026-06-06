@@ -28,10 +28,15 @@ export default function MemberProfile({ params }: Props) {
       <div className="max-w-5xl mx-auto">
         <Link href="/#team">
           <motion.button
-            whileHover={{ x: language === 'ar' ? 5 : -5 }}
-            className="flex items-center gap-2 text-slate-400 hover:text-blue-600 transition-colors mb-6 font-bold text-xs uppercase tracking-widest"
+            whileHover={{ x: language === "ar" ? 5 : -5 }}
+            className="flex items-center gap-2 text-slate-400 hover:text-[var(--color-brand)] transition-colors mb-6 font-bold text-xs uppercase tracking-widest"
           >
-            {language === 'ar' ? <ArrowLeft size={16} className="rotate-180" /> : <ArrowLeft size={16} />} {t("back_to_team")}
+            {language === "ar" ? (
+              <ArrowLeft size={16} className="rotate-180" />
+            ) : (
+              <ArrowLeft size={16} />
+            )}{" "}
+            {t("back_to_team")}
           </motion.button>
         </Link>
 
@@ -43,7 +48,7 @@ export default function MemberProfile({ params }: Props) {
           >
             <Image
               src={member.image}
-              alt={language === 'ar' ? (member as any).nameAr : member.name}
+              alt={language === "ar" ? (member as any).nameAr : member.name}
               fill
               priority
               className="object-cover transition-all duration-700"
@@ -57,11 +62,11 @@ export default function MemberProfile({ params }: Props) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <span className="text-blue-600 font-bold text-[10px] uppercase tracking-[0.4em] block mb-4">
-                {language === 'ar' ? (member as any).roleAr : member.role}
+              <span className="text-[var(--color-brand)] font-bold text-[10px] uppercase tracking-[0.4em] block mb-4">
+                {language === "ar" ? (member as any).roleAr : member.role}
               </span>
               <h1 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter mb-8  leading-tight">
-                {language === 'ar' ? (member as any).nameAr : member.name}
+                {language === "ar" ? (member as any).nameAr : member.name}
               </h1>
 
               <div className="space-y-8">
@@ -70,7 +75,7 @@ export default function MemberProfile({ params }: Props) {
                     {t("about_member")}
                   </h4>
                   <p className="text-slate-600 text-lg leading-relaxed font-medium max-w-xl whitespace-pre-line">
-                    {language === 'ar' ? (member as any).bioAr : member.bio}
+                    {language === "ar" ? (member as any).bioAr : member.bio}
                   </p>
                 </div>
 
@@ -96,7 +101,7 @@ export default function MemberProfile({ params }: Props) {
                       href={member.contact.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-slate-400 hover:text-blue-600 transition-colors"
+                      className="text-slate-400 hover:text-[var(--color-brand)] transition-colors"
                     >
                       <LinkedInIcon size={22} />
                     </a>

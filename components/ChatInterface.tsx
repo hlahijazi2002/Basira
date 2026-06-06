@@ -19,7 +19,9 @@ const hasArabic = (text: string) => /[\u0600-\u06FF]/.test(text);
 export default function ChatInterface({ onClose }: ChatInterfaceProps) {
   const { language } = useLanguage();
   const isArabic = language === "ar";
-  const sessionIdRef = useRef(`basira-chat-${Date.now()}-${Math.random().toString(36).slice(2)}`);
+  const sessionIdRef = useRef(
+    `basira-chat-${Date.now()}-${Math.random().toString(36).slice(2)}`,
+  );
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
@@ -63,11 +65,15 @@ export default function ChatInterface({ onClose }: ChatInterfaceProps) {
     try {
       const controller = new AbortController();
       const timeoutId = window.setTimeout(() => controller.abort(), 20000);
-      const apiUrl = process.env.NEXT_PUBLIC_CHAT_API_URL || "http://localhost:8003";
+      const apiUrl =
+        process.env.NEXT_PUBLIC_CHAT_API_URL || "http://localhost:8003";
       const response = await fetch(`${apiUrl}/api/v1/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: userMessage, session_id: sessionIdRef.current }),
+        body: JSON.stringify({
+          message: userMessage,
+          session_id: sessionIdRef.current,
+        }),
         signal: controller.signal,
       });
       window.clearTimeout(timeoutId);
@@ -75,7 +81,10 @@ export default function ChatInterface({ onClose }: ChatInterfaceProps) {
       if (!response.ok) throw new Error("Failed to get response");
 
       const data = await response.json();
-      setMessages((prev) => [...prev, { role: "assistant", content: data.response }]);
+      setMessages((prev) => [
+        ...prev,
+        { role: "assistant", content: data.response },
+      ]);
     } catch (error) {
       console.error("Chat Error:", error);
       setMessages((prev) => [
@@ -96,7 +105,7 @@ export default function ChatInterface({ onClose }: ChatInterfaceProps) {
     <div className="flex flex-col h-[600px] w-full max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-200">
       <div className="p-5 border-b border-slate-100 bg-white flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="p-2 bg-blue-600 rounded-xl">
+          <div className="p-2 bg-[var(--color-brand)] rounded-xl">
             <Bot className="w-5 h-5 text-white" />
           </div>
           <div>
@@ -143,13 +152,15 @@ export default function ChatInterface({ onClose }: ChatInterfaceProps) {
               >
                 <div
                   className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 shadow-sm ${
-                    m.role === "user" ? "bg-blue-600" : "bg-white border border-slate-200"
+                    m.role === "user"
+                      ? "bg-[var(--color-brand)]"
+                      : "bg-white border border-slate-200"
                   }`}
                 >
                   {m.role === "user" ? (
                     <User className="w-4 h-4 text-white" />
                   ) : (
-                    <Bot className="w-4 h-4 text-blue-600" />
+                    <Bot className="w-4 h-4 text-[var(--color-brand)]" />
                   )}
                 </div>
                 <div
@@ -158,7 +169,7 @@ export default function ChatInterface({ onClose }: ChatInterfaceProps) {
                     messageIsArabic ? "text-right" : "text-left"
                   } ${
                     m.role === "user"
-                      ? "bg-blue-600 text-white rounded-tr-none"
+                      ? "bg-[var(--color-brand)] text-white rounded-tr-none"
                       : "bg-white text-slate-700 rounded-tl-none border border-slate-100"
                   }`}
                 >
@@ -176,7 +187,7 @@ export default function ChatInterface({ onClose }: ChatInterfaceProps) {
           >
             <div className="flex gap-3 max-w-[85%]">
               <div className="w-8 h-8 rounded-lg bg-white border border-slate-200 flex items-center justify-center">
-                <Loader2 className="w-4 h-4 text-blue-600 animate-spin" />
+                <Loader2 className="w-4 h-4 text-[var(--color-brand)] animate-spin" />
               </div>
               <div className="p-3 bg-white text-slate-400 rounded-2xl rounded-tl-none border border-slate-100 italic text-[13px]">
                 {isArabic ? "جاري المعالجة..." : "Thinking..."}
@@ -193,7 +204,9 @@ export default function ChatInterface({ onClose }: ChatInterfaceProps) {
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder={isArabic ? "كيف يمكننا مساعدتك؟" : "How can we help you?"}
+            placeholder={
+              isArabic ? "كيف يمكننا مساعدتك؟" : "How can we help you?"
+            }
             dir={isArabic ? "rtl" : "ltr"}
             className={`w-full bg-slate-50 border border-slate-200 text-slate-900 rounded-xl py-3 focus:outline-none focus:ring-2 focus:ring-blue-600/20 transition-all placeholder:text-slate-400 text-sm ${
               isArabic ? "pr-4 pl-12 text-right" : "pl-4 pr-12"
@@ -202,7 +215,7 @@ export default function ChatInterface({ onClose }: ChatInterfaceProps) {
           <button
             type="submit"
             disabled={isLoading || !input.trim()}
-            className={`absolute top-1.5 bottom-1.5 px-3 bg-blue-600 hover:bg-blue-700 disabled:bg-slate-200 disabled:text-slate-400 text-white rounded-lg transition-all flex items-center justify-center group ${
+            className={`absolute top-1.5 bottom-1.5 px-3 bg-[var(--color-brand)] hover:bg-blue-700 disabled:bg-slate-200 disabled:text-slate-400 text-white rounded-lg transition-all flex items-center justify-center group ${
               isArabic ? "left-1.5" : "right-1.5"
             }`}
           >

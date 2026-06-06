@@ -13,39 +13,38 @@ export default function VisionMission() {
       className="py-24 bg-slate-50 border-t border-slate-100 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className={`mb-20 ${language === "ar" ? "text-right" : "text-left"}`}
         >
-          <span className="text-blue-600 font-bold text-[11px] uppercase tracking-[0.4em] block mb-4">
+          <span className="text-[var(--color-brand)] font-bold text-[11px] uppercase tracking-[0.4em] block mb-4">
             {t("vision_badge")}
           </span>
           <h2 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter">
             {t("vision_title_part1")}{" "}
-            <span className="text-slate-300">{t("vision_title_part2")}</span>
+            <span className="text-[var(--color-brand)]/40">
+              {t("vision_title_part2")}
+            </span>
           </h2>
         </motion.div>
 
-        {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Vision */}
           <motion.div
             initial={{ opacity: 0, x: language === "ar" ? 30 : -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className={`group p-10 bg-white rounded-3xl border border-slate-100 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-500 ${language === "ar" ? "text-right" : "text-left"}`}
+            className={`group p-10 bg-white rounded-3xl border border-slate-100 hover:border-[var(--color-brand)]/30 hover:shadow-xl hover:shadow-[var(--color-brand)]/10 transition-all duration-500 ${language === "ar" ? "text-right" : "text-left"}`}
           >
             <div
               className={`flex items-center gap-4 mb-8 ${language === "ar" ? "flex-row-reverse" : ""}`}
             >
-              <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center group-hover:bg-blue-600 transition-all duration-500">
+              <div className="w-12 h-12 rounded-2xl bg-[var(--color-brand)]/10 flex items-center justify-center group-hover:bg-[var(--color-brand)] transition-all duration-500">
                 <Eye
                   size={22}
-                  className="text-blue-600 group-hover:text-white transition-colors duration-500"
+                  className="text-[var(--color-brand)] group-hover:text-white transition-colors duration-500"
                 />
               </div>
               <h3 className="text-slate-900 font-black text-xl uppercase tracking-tight">
@@ -57,13 +56,12 @@ export default function VisionMission() {
             </p>
           </motion.div>
 
-          {/* Mission */}
           <motion.div
             initial={{ opacity: 0, x: language === "ar" ? -30 : 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className={`group p-10 bg-blue-600 rounded-3xl border border-blue-600 hover:shadow-xl hover:shadow-blue-500/30 transition-all duration-500 ${language === "ar" ? "text-right" : "text-left"}`}
+            className={`group p-10 bg-[var(--color-brand)] rounded-3xl hover:shadow-xl hover:shadow-[var(--color-brand)]/30 transition-all duration-500 ${language === "ar" ? "text-right" : "text-left"}`}
           >
             <div
               className={`flex items-center gap-4 mb-8 ${language === "ar" ? "flex-row-reverse" : ""}`}

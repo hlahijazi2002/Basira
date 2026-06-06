@@ -17,7 +17,7 @@ export default function FloatingChat() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-8 right-8 z-50 p-4 bg-blue-600 text-white rounded-full shadow-2xl shadow-blue-600/30 border border-white/20 hover:bg-blue-700 transition-colors"
+        className="fixed bottom-8 right-8 z-50 p-4 bg-[var(--color-brand)] text-white rounded-full shadow-2xl shadow-blue-600/30 border border-white/20 hover:bg-blue-700 transition-colors"
       >
         <MessageSquare size={28} />
       </motion.button>

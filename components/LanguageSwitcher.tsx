@@ -12,7 +12,7 @@ export default function LanguageSwitcher() {
         onClick={() => setLanguage("en")}
         className={`px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-md transition-all ${
           language === "en"
-            ? "bg-white text-blue-600 shadow-sm"
+            ? "bg-white text-[var(--color-brand)] shadow-sm"
             : "text-slate-500 hover:text-slate-700"
         }`}
       >
@@ -22,7 +22,7 @@ export default function LanguageSwitcher() {
         onClick={() => setLanguage("ar")}
         className={`px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-md transition-all ${
           language === "ar"
-            ? "bg-white text-blue-600 shadow-sm font-cairo"
+            ? "bg-white text-[var(--color-brand)] shadow-sm font-cairo"
             : "text-slate-500 hover:text-slate-700 font-cairo"
         }`}
       >
