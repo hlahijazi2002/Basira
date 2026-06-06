@@ -46,7 +46,7 @@ export default function Navbar() {
           href="/"
           className="text-xl font-black text-slate-900 tracking-tighter uppercase shrink-0"
         >
-          BASIRA <span className="text-[var(--color-brand)]">LENS</span>
+          BASIRA <span className="text-brand">LENS</span>
         </Link>
 
         <div className="hidden md:flex items-center gap-10">
@@ -54,10 +54,10 @@ export default function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className="text-slate-600 text-[13px] uppercase tracking-widest font-bold hover:text-[var(--color-brand)] transition-colors relative group"
+              className="text-slate-600 text-[13px] uppercase tracking-widest font-bold hover:text-brand transition-colors relative group"
             >
               {link.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--color-brand)] transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
         </div>
@@ -66,7 +66,7 @@ export default function Navbar() {
           <LanguageSwitcher />
           <Link
             href="#contact"
-            className="px-6 py-2.5 bg-[var(--color-brand)] hover:bg-[var(--color-brand-dark)] text-white text-[13px] uppercase tracking-wider font-bold rounded-xl transition-all active:scale-95 shadow-md shadow-[var(--color-brand)]/10"
+            className="px-6 py-2.5 bg-brand hover:bg-color-brand-dark text-white text-[13px] uppercase tracking-wider font-bold rounded-xl transition-all active:scale-95 shadow-md shadow-(--color-brand)/10"
           >
             {t("nav_cta")}
           </Link>
@@ -100,7 +100,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-slate-700 text-lg font-bold hover:text-[var(--color-brand)] uppercase tracking-tight"
+                  className="text-slate-700 text-lg font-bold hover:text-brand uppercase tracking-tight"
                 >
                   {link.name}
                 </Link>
@@ -109,7 +109,7 @@ export default function Navbar() {
               <Link
                 href="#contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="w-full py-4 bg-[var(--color-brand)] hover:bg-[var(--color-brand-dark)] text-white rounded-2xl font-bold uppercase tracking-wider transition-all"
+                className="w-full py-4 bg-brand hover:bg-brand-dark text-white rounded-2xl font-bold uppercase tracking-wider transition-all"
               >
                 {t("nav_cta_mobile")}
               </Link>
