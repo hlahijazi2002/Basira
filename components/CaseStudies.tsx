@@ -10,7 +10,7 @@ export default function CaseStudies() {
   return (
     <section
       id="case-studies"
-      className="py-24 bg-white border-t border-slate-100 overflow-hidden"
+      className="py-14 bg-white border-t border-slate-100 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6">
         <motion.div

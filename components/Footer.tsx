@@ -1,6 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/context/LanguageContext";
+import Image from "next/image";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -13,7 +14,7 @@ export default function Footer() {
           className={`flex flex-col gap-2 text-center ${language === "ar" ? "md:text-right" : "md:text-left"}`}
         >
           <div className="text-2xl font-black text-slate-900 tracking-tighter uppercase">
-            BASIRA <span className="text-[var(--color-brand)]">LENS</span>
+            <Image src="/logo.png" alt="logo" height={10} width={110} />
           </div>
         </div>
 

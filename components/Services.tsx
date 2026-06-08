@@ -11,7 +11,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="py-24 bg-white border-t border-slate-100 overflow-hidden"
+      className="py-14 bg-white border-t border-slate-100 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
@@ -19,7 +19,7 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className={`mb-24 ${language === "ar" ? "text-right" : "text-left"}`}
+          className={`mb-24 `}
         >
           <span className="text-[var(--color-brand)] font-bold text-[11px] uppercase tracking-[0.4em] block mb-4">
             {t("services_badge")}
@@ -30,9 +30,7 @@ export default function Services() {
               {t("services_title_part2")}
             </span>
           </h2>
-          <div
-            className={`w-20 h-1.5 bg-brand rounded-full ${language === "ar" ? "mr-0 ml-auto" : ""}`}
-          />
+          <div className={`w-20 h-1.5 bg-brand rounded-full `} />
         </motion.div>
 
         <div className="flex flex-col gap-6">
@@ -54,34 +52,30 @@ export default function Services() {
               >
                 <div className="flex-1 p-10 flex flex-col justify-between">
                   <div>
-                    <div
-                      className={`flex items-center gap-4 mb-6 ${language === "ar" ? "flex-row-reverse" : ""}`}
-                    >
+                    <div className={`flex items-center gap-4 mb-6 `}>
                       <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-white border border-slate-200 text-slate-400 shadow-sm group-hover:bg-brand group-hover:text-white group-hover:border-[var(--color-brand)] group-hover:shadow-xl transition-all duration-500 shrink-0">
                         {IconComponent && <IconComponent size={28} />}
                       </div>
                       <h3
-                        className={`text-2xl font-black uppercase tracking-tight text-slate-900 ${language === "ar" ? "text-right" : "text-left"}`}
+                        className={`text-2xl font-black uppercase tracking-tight text-slate-900 `}
                       >
                         {t(`service_${i + 1}_title`)}
                       </h3>
                     </div>
 
                     <p
-                      className={`text-sm leading-relaxed text-slate-500 font-medium mb-8 ${language === "ar" ? "text-right" : "text-left"}`}
+                      className={`text-sm leading-relaxed text-slate-500 font-medium mb-8 `}
                     >
                       {t(`service_${i + 1}_desc`)}
                     </p>
 
                     <div>
                       <div
-                        className={`flex items-center gap-2 text-[10px] font-black text-[var(--color-brand)] uppercase tracking-widest mb-3 ${language === "ar" ? "flex-row-reverse" : ""}`}
+                        className={`flex items-center gap-2 text-[10px] font-black text-[var(--color-brand)] uppercase tracking-widest mb-3 `}
                       >
                         <Cpu size={12} /> {t("tools_label")}
                       </div>
-                      <div
-                        className={`flex flex-wrap gap-1.5 ${language === "ar" ? "justify-end" : ""}`}
-                      >
+                      <div className={`flex flex-wrap gap-1.5 `}>
                         {tools.map((tool, idx) => (
                           <span
                             key={idx}
@@ -95,14 +89,14 @@ export default function Services() {
                   </div>
 
                   <div
-                    className={`flex items-center justify-between pt-8 mt-8 border-t border-slate-100 ${language === "ar" ? "flex-row-reverse" : ""}`}
+                    className={`flex items-center justify-between pt-8 mt-8 border-t border-slate-100 `}
                   >
                     <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-300 group-hover:text-[var(--color-brand)] transition-colors duration-500">
                       {t("service_pillar")} 0{i + 1}
                     </span>
                     <a
                       href="#contact"
-                      className={`flex items-center gap-2 px-4 py-2 rounded-full bg-brand text-white text-[10px] font-black uppercase tracking-widest hover:bg-[var(--color-brand-dark)] transition-all duration-300 shadow-lg shadow-[var(--color-brand)]/20 ${language === "ar" ? "flex-row-reverse" : ""}`}
+                      className={`flex items-center gap-2 px-4 py-2 rounded-full bg-brand text-white text-[10px] font-black uppercase tracking-widest hover:bg-[var(--color-brand-dark)] transition-all duration-300 shadow-lg shadow-[var(--color-brand)]/20 `}
                     >
                       {t("contact naw")} <ArrowUpRight size={14} />
                     </a>
@@ -113,7 +107,7 @@ export default function Services() {
 
                 <div className="w-full md:w-[320px] p-10 bg-white flex flex-col justify-center">
                   <div
-                    className={`flex items-center gap-2 text-[10px] font-black text-[var(--color-brand)] uppercase tracking-widest mb-6 ${language === "ar" ? "flex-row-reverse" : ""}`}
+                    className={`flex items-center gap-2 text-[10px] font-black text-[var(--color-brand)] uppercase tracking-widest mb-6 `}
                   >
                     <Layers size={12} /> {t("expertise_label")}
                   </div>
@@ -128,11 +122,11 @@ export default function Services() {
                           duration: 0.4,
                           delay: i * 0.08 + idx * 0.06,
                         }}
-                        className={`flex items-center gap-3 ${language === "ar" ? "flex-row-reverse" : ""}`}
+                        className={`flex items-center gap-3 `}
                       >
                         <div className="w-1.5 h-1.5 bg-brand rounded-full shrink-0" />
                         <span
-                          className={`text-xs font-bold text-slate-700 uppercase tracking-tight ${language === "ar" ? "text-right" : "text-left"}`}
+                          className={`text-xs font-bold text-slate-700 uppercase tracking-tight `}
                         >
                           {detail}
                         </span>

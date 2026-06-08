@@ -10,7 +10,7 @@ export default function VisionMission() {
   return (
     <section
       id="vision"
-      className="py-24 bg-slate-50 border-t border-slate-100 overflow-hidden"
+      className="py-14 bg-slate-50 border-t border-slate-100 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
@@ -38,9 +38,7 @@ export default function VisionMission() {
             transition={{ duration: 0.6 }}
             className={`group p-10 bg-white rounded-3xl border border-slate-100 hover:border-[var(--color-brand)]/30 hover:shadow-xl hover:shadow-[var(--color-brand)]/10 transition-all duration-500 ${language === "ar" ? "text-right" : "text-left"}`}
           >
-            <div
-              className={`flex items-center gap-4 mb-8 ${language === "ar" ? "flex-row-reverse" : ""}`}
-            >
+            <div className={`flex items-center gap-4 mb-8 `}>
               <div className="w-12 h-12 rounded-2xl bg-[var(--color-brand)]/10 flex items-center justify-center group-hover:bg-[var(--color-brand)] transition-all duration-500">
                 <Eye
                   size={22}
@@ -63,9 +61,7 @@ export default function VisionMission() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className={`group p-10 bg-[var(--color-brand)] rounded-3xl hover:shadow-xl hover:shadow-[var(--color-brand)]/30 transition-all duration-500 ${language === "ar" ? "text-right" : "text-left"}`}
           >
-            <div
-              className={`flex items-center gap-4 mb-8 ${language === "ar" ? "flex-row-reverse" : ""}`}
-            >
+            <div className={`flex items-center gap-4 mb-8`}>
               <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center">
                 <Target size={22} className="text-white" />
               </div>

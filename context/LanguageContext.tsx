@@ -162,7 +162,7 @@ export const translations = {
     vision_title_part2: "Are Headed",
     vision_card_title: "Our Vision",
     vision_card_desc:
-      "To be the trusted partner for organizations across the Arab world in Data Analytics and Artificial Intelligence, empowering them to make smarter decisions and achieve sustainable growth through data-driven insights.",
+      "To be the trusted partner for organizations across the Arab world in Data Analytics and Artificial Intelligence.",
     mission_card_title: "Our Mission",
     mission_card_desc:
       "Empowering organizations through data-driven intelligence, advanced analytics, and AI-powered innovation to unlock their full potential.",
@@ -342,7 +342,7 @@ export const translations = {
     vision_title_part2: "نتجه؟",
     vision_card_title: "رؤيتنا",
     vision_card_desc:
-      "أن نكون الشريك الموثوق للمؤسسات في العالم العربي في مجال تحليل البيانات والذكاء الاصطناعي، ونمكّنها من اتخاذ قرارات أكثر ذكاءً وتحقيق نمو مستدام من خلال الرؤى المستندة إلى البيانات.",
+      "أن نكون الشريك الموثوق للمؤسسات في العالم العربي في مجال تحليل البيانات والذكاء الاصطناعي.",
     mission_card_title: "رسالتنا",
     mission_card_desc:
       "تمكين المؤسسات من اتخاذ قرارات أكثر ذكاءً من خلال التحليلات المتقدمة والرؤى المستندة إلى البيانات وحلول الذكاء الاصطناعي للوصول إلى كامل إمكاناتها.",

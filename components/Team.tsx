@@ -10,7 +10,7 @@ export default function Team() {
   const { t, language } = useLanguage();
 
   return (
-    <section id="team" className="py-24 bg-white px-16">
+    <section id="team" className="py-14 bg-white px-16">
       <div className="max-w-7xl mx-auto">
         <div
           className={`mb-16 flex flex-col md:flex-row md:items-end justify-between gap-4 ${language === "ar" ? "text-right" : "text-left"}`}

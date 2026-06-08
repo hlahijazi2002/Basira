@@ -77,7 +77,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className={`py-24 bg-white px-16 relative border-t border-slate-100 overflow-hidden ${language === "ar" ? "text-right" : "text-left"}`}
+      className={`py-14 bg-white px-16 relative border-t border-slate-100 overflow-hidden ${language === "ar" ? "text-right" : "text-left"}`}
     >
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[var(--color-brand)]/5 blur-[100px] rounded-full pointer-events-none" />
 

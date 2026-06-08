@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import LanguageSwitcher from "./LanguageSwitcher";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -46,7 +47,7 @@ export default function Navbar() {
           href="/"
           className="text-xl font-black text-slate-900 tracking-tighter uppercase shrink-0"
         >
-          BASIRA <span className="text-brand">LENS</span>
+          <Image src="/logo.png" alt="logo" height={10} width={110} />
         </Link>
 
         <div className="hidden md:flex items-center gap-10">

@@ -3,6 +3,7 @@
 @theme {
   --font-cairo: "Cairo", sans-serif;
   --animate-marquee: marquee 30s linear infinite;
+  --animate-marquee-rtl: marquee-rtl 30s linear infinite;
   --color-brand: #0a84ff;
   --color-brand-dark: #003b8e;
 }
@@ -13,6 +14,15 @@
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-rtl {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(50%);
   }
 }
 

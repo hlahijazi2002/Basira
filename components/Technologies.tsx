@@ -29,7 +29,7 @@ export default function Technologies() {
   return (
     <section
       id="technologies"
-      className="py-24 bg-white border-t border-slate-100 overflow-hidden"
+      className="py-14 bg-white border-t border-slate-100 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
@@ -57,7 +57,7 @@ export default function Technologies() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: gi * 0.1 }}
-              className={`flex items-center gap-8 py-5 ${language === "ar" ? "flex-row-reverse" : "flex-row"}`}
+              className={`flex items-center gap-8 py-5 `}
             >
               <span className="text-[10px] font-black uppercase tracking-[0.25em] text-slate-400 min-w-[140px] shrink-0">
                 {t(group.labelKey)}
