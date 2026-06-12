@@ -11,7 +11,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="py-14 bg-white border-t border-slate-100 overflow-hidden"
+      className="py-16 bg-white border-t border-slate-100 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
@@ -19,14 +19,14 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className={`mb-24 `}
+          className={`mb-14 `}
         >
-          <span className="text-[var(--color-brand)] font-bold text-[11px] uppercase tracking-[0.4em] block mb-4">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[var(--color-brand)]/25 bg-[var(--color-brand)]/8 text-[var(--color-brand)] text-[11px] font-bold mb-8 uppercase tracking-[0.25em]">
             {t("services_badge")}
           </span>
           <h2 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter mb-6">
             {t("services_title_part1")}{" "}
-            <span className="text-[var(--color-brand)]/40">
+            <span className="text-[var(--color-brand)]/80">
               {t("services_title_part2")}
             </span>
           </h2>

@@ -29,7 +29,7 @@ export default function Technologies() {
   return (
     <section
       id="technologies"
-      className="py-14 bg-white border-t border-slate-100 overflow-hidden"
+      className="py-16 bg-white border-t border-slate-100 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
@@ -43,7 +43,7 @@ export default function Technologies() {
           </span>
           <h2 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter">
             {t("tech_title_part1")}{" "}
-            <span className="text-[var(--color-brand)]/40">
+            <span className="text-[var(--color-brand)]/80">
               {t("tech_title_part2")}
             </span>
           </h2>

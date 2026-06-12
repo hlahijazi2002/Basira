@@ -13,7 +13,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-14 bg-white relative overflow-hidden">
+    <section id="about" className="py-16 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-start gap-20">
           <div
@@ -24,7 +24,7 @@ export default function About() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                className="text-[var(--color-brand)] font-bold text-[11px] uppercase tracking-[0.4em] block"
+                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[var(--color-brand)]/25 bg-[var(--color-brand)]/8 text-[var(--color-brand)] text-[11px] font-bold mb-8 uppercase tracking-[0.25em]"
               >
                 {t("about_badge")}
               </motion.span>
@@ -37,7 +37,7 @@ export default function About() {
                 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter"
               >
                 {t("about_title_part1")} <br />
-                <span className="text-[var(--color-brand)]/40">
+                <span className="text-[var(--color-brand)]/80 mt-2.5 block">
                   {t("about_title_part2")}
                 </span>
               </motion.h2>

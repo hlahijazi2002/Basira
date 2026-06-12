@@ -23,7 +23,7 @@ export default function WhyUs() {
   }));
 
   return (
-    <section className="py-14 bg-slate-50 border-t border-slate-100 overflow-hidden">
+    <section className="py-16 bg-slate-50 border-t border-slate-100 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -31,12 +31,12 @@ export default function WhyUs() {
           viewport={{ once: true }}
           className={`mb-16 ${language === "ar" ? "text-right" : "text-left"}`}
         >
-          <span className="text-[var(--color-brand)] font-bold text-[11px] uppercase tracking-[0.4em] block mb-4">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[var(--color-brand)]/25 bg-[var(--color-brand)]/8 text-[var(--color-brand)] text-[11px] font-bold mb-8 uppercase tracking-[0.25em]">
             {t("why_badge")}
           </span>
           <h2 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter">
             {t("why_title_part1")}{" "}
-            <span className="text-[var(--color-brand)]/40">
+            <span className="text-[var(--color-brand)]/80">
               {t("why_title_part2")}
             </span>
           </h2>

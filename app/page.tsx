@@ -7,7 +7,6 @@ import FloatingChat from "@/components/FloatingChat";
 import WhyUs from "@/components/WhyUs";
 import Process from "@/components/Process";
 import Industries from "@/components/Industries";
-import Technologies from "@/components/Technologies";
 import CaseStudies from "@/components/CaseStudies";
 import VisionMission from "@/components/VisionMission";
 
@@ -16,13 +15,12 @@ export default function Home() {
     <main className="relative bg-slate-950">
       <Hero />
       <About />
+      <VisionMission />
       <Services />
       <WhyUs />
       <Process />
       <Industries />
-      <Technologies />
       <CaseStudies />
-      <VisionMission />
       <Contact />
       <Footer />
       <FloatingChat />

@@ -47,8 +47,14 @@ export default function Industries() {
 
     const keyframes =
       language === "ar"
-        ? [{ transform: `translateX(0px)` }, { transform: `translateX(${halfWidth}px)` }]
-        : [{ transform: `translateX(0px)` }, { transform: `translateX(-${halfWidth}px)` }];
+        ? [
+            { transform: `translateX(0px)` },
+            { transform: `translateX(${halfWidth}px)` },
+          ]
+        : [
+            { transform: `translateX(0px)` },
+            { transform: `translateX(-${halfWidth}px)` },
+          ];
 
     animRef.current = el.animate(keyframes, {
       duration: 30000,
@@ -64,7 +70,7 @@ export default function Industries() {
   return (
     <section
       id="industries"
-      className="py-14 bg-slate-50 border-t border-slate-100 overflow-hidden"
+      className="py-16 bg-slate-50 border-t border-slate-100 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
@@ -73,12 +79,12 @@ export default function Industries() {
           viewport={{ once: true }}
           className={`mb-20 ${language === "ar" ? "text-right" : "text-left"}`}
         >
-          <span className="text-[var(--color-brand)] font-bold text-[11px] uppercase tracking-[0.4em] block mb-4">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[var(--color-brand)]/25 bg-[var(--color-brand)]/8 text-[var(--color-brand)] text-[11px] font-bold mb-8 uppercase tracking-[0.25em]">
             {t("industries_badge")}
           </span>
           <h2 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter">
             {t("industries_title_part1")}{" "}
-            <span className="text-[var(--color-brand)]/40">
+            <span className="text-[var(--color-brand)]/80">
               {t("industries_title_part2")}
             </span>
           </h2>
@@ -96,7 +102,9 @@ export default function Industries() {
               <div
                 key={i}
                 className={`group flex items-center gap-4 p-6 bg-white rounded-2xl border border-slate-100 hover:border-[var(--color-brand)]/30 hover:shadow-lg hover:shadow-[var(--color-brand)]/10 transition-all duration-500 shrink-0 w-64 ${
-                  language === "ar" ? "flex-row-reverse text-right" : "text-left"
+                  language === "ar"
+                    ? "flex-row-reverse text-right"
+                    : "text-left"
                 }`}
               >
                 <div className="w-10 h-10 rounded-xl bg-[var(--color-brand)]/10 flex items-center justify-center shrink-0 group-hover:bg-[var(--color-brand)] transition-all duration-500">

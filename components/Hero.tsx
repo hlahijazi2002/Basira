@@ -8,7 +8,7 @@ export default function Hero() {
   const { t, language } = useLanguage();
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden bg-slate-50 pt-20">
+    <section className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden bg-slate-50 pt-35">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-150 h-75 bg-[var(--color-brand)]/8 blur-[120px] rounded-full" />
       </div>
