@@ -114,10 +114,10 @@ export default function Contact() {
                     {t("contact_email_us")}
                   </p>
                   <a
-                    href="mailto:basira.ai3333@gmail.com"
+                    href="mailto:basiralens@gmail.com"
                     className="text-sm font-bold text-slate-900 hover:text-[var(--color-brand)] transition-colors"
                   >
-                    basira.ai3333@gmail.com
+                    basiralens@gmail.com
                   </a>
                 </div>
               </div>

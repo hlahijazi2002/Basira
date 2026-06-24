@@ -11,6 +11,7 @@ if root_path not in sys.path:
 from dotenv import load_dotenv
 
 load_dotenv(backend_path / ".env")
+load_dotenv(backend_path / "Basira.env", override=True)
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -21,9 +22,12 @@ app = FastAPI(title="Basira Lens AI Backend", version="1.0.0")
 
 allowed_origins = [
     origin.strip()
-    for origin in os.getenv("ALLOWED_ORIGINS", "http://localhost:3000").split(",")
+    for origin in os.getenv("ALLOWED_ORIGINS", "http://localhost:3000,http://localhost:5173").split(",")
     if origin.strip()
 ]
+for local_origin in ["http://localhost:3000", "http://localhost:5173"]:
+    if local_origin not in allowed_origins:
+        allowed_origins.append(local_origin)
 
 # Enable CORS for the configured frontend origins.
 app.add_middleware(

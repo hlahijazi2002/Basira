@@ -151,17 +151,17 @@ def _source_answer(user_input: str, history: list[dict[str, str]] | None = None)
         if arabic:
             return (
                 "الموقع يوضح خدمات وخبرات بصيرة Lens، لكنه لا يعرض أسماء عملاء أو دراسات حالة منشورة حالياً. "
-                "للتفاصيل الدقيقة عن أعمال سابقة، الأفضل التواصل مباشرة عبر واتساب +970 597 238 788 أو البريد basira.ai3333@gmail.com."
+                "للتفاصيل الدقيقة عن أعمال سابقة، الأفضل التواصل مباشرة عبر واتساب +970 597 238 788 أو البريد basiralens@gmail.com."
             )
         return (
             "The site explains BasiraLens services and expertise, but it does not currently list client names or published case studies. "
-            "For exact previous-work details, please contact the team on WhatsApp +970 597 238 788 or email basira.ai3333@gmail.com."
+            "For exact previous-work details, please contact the team on WhatsApp +970 597 238 788 or email basiralens@gmail.com."
         )
 
     if any(term in lowered for term in ["تواصل", "التواصل", "contact", "email", "واتساب", "whatsapp"]):
         if arabic:
-            return "يمكنك التواصل مع بصيرة Lens عبر:\n- واتساب: +970 597 238 788\n- البريد الإلكتروني: basira.ai3333@gmail.com"
-        return "You can contact BasiraLens through:\n- WhatsApp: +970 597 238 788\n- Email: basira.ai3333@gmail.com"
+            return "يمكنك التواصل مع بصيرة Lens عبر:\n- واتساب: +970 597 238 788\n- البريد الإلكتروني: basiralens@gmail.com"
+        return "You can contact BasiraLens through:\n- WhatsApp: +970 597 238 788\n- Email: basiralens@gmail.com"
 
     if any(
         term in lowered
