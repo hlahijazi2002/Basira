@@ -39,6 +39,7 @@ yarn-error.log*
 *.env*
 !.env.example
 !backend/.env.example
+!deploy/.env.example
 
 # python virtual environment
 backend/venv/

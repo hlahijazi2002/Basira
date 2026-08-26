@@ -1,0 +1,15 @@
+node_modules
+.next
+.git
+.gitignore
+backend/venv
+backend/__pycache__
+**/__pycache__
+*.pyc
+.env
+.env.*
+!.env.example
+deploy
+Dockerfile
+.dockerignore
+README.md
